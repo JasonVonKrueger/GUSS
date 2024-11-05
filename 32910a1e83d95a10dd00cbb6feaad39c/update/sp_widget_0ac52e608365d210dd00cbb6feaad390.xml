@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+	/* widget controller */
+	var c = this;
+	c.showNav = true;
+
+	$rootScope.$on('addTabEvent', function(event, obj) {
+		document.getElementById('title-screen').style.display = 'none';
+	});
+	
+	$rootScope.$on('removeTabEvent', function(event, obj) {
+		document.getElementById('title-screen').style.display = 'flex';
+	});
+	
+	
+	// define hotkeys for opening and closing the sidebar...
+	window.addEventListener('keydown', function(event) {
+		if (!c.showNav && (event.ctrlKey && event.code === 'ArrowRight')) {
+			event.preventDefault();
+			document.getElementById('nav_action').click();
+		}
+		
+		if (c.showNav && (event.ctrlKey && event.code === 'ArrowLeft')) {
+			event.preventDefault();
+			document.getElementById('nav_action').click();
+		}		
+	});
+
+	c.toggleNav = function() {
+		if (c.showNav) {
+			// hide it
+			document.getElementById('tree-container').style.display = 'none';
+			document.getElementById('sidebar').style.width = '40px';
+			document.getElementById('main').style.marginLeft= '0';
+			document.getElementById('nav_action').classList.remove('glyphicon-triangle-left');
+			document.getElementById('nav_action').classList.add('glyphicon-triangle-right');
+			c.showNav = false;
+		}
+		else {
+			// show it
+			document.getElementById('sidebar').style.width = '250px';
+			document.getElementById('main').style.marginLeft = '250px';
+			document.getElementById('tree-container').style.display = 'block';
+			document.getElementById('nav_action').classList.remove('glyphicon-triangle-right');
+			document.getElementById('nav_action').classList.add('glyphicon-triangle-left');
+			c.showNav = true;
+		}
+
+	}
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>#sidebar {&#13;
+  height: 100%;&#13;
+  width: 250px;&#13;
+  position: fixed;&#13;
+  z-index: 1;&#13;
+  top: 0;&#13;
+  left: 0;&#13;
+  background-color: #303841;&#13;
+  overflow-x: hidden;&#13;
+  transition: 0.5s;&#13;
+  padding-top: 40px;&#13;
+  padding-left: 1rem;&#13;
+}&#13;
+&#13;
+#sidebar #nav_action {&#13;
+  padding: 8px 8px 8px 22px;&#13;
+  text-decoration: none;&#13;
+  border: none;&#13;
+  color: #818181;&#13;
+  display: block;&#13;
+  transition: 0.3s;&#13;
+}&#13;
+&#13;
+#nav_action:hover {&#13;
+  color: #fff;&#13;
+}&#13;
+&#13;
+#sidebar #nav_action {&#13;
+  position: absolute;&#13;
+  top: 0;&#13;
+  right: 2px;&#13;
+  font-size: 1.6rem;&#13;
+  margin-left: 50px;&#13;
+}&#13;
+&#13;
+#main {&#13;
+  margin-left: 250px;&#13;
+  transition: margin-left .5s;&#13;
+  xpadding: 16px;&#13;
+}&#13;
+&#13;
+#title-screen {&#13;
+  font-size: 4rem;&#13;
+  color: #555;&#13;
+  display: flex;&#13;
+  justify-content: center;&#13;
+  align-items: center;&#13;
+  height: 600px;&#13;
+}&#13;
+&#13;
+.vert {&#13;
+  writing-mode: vertical-rl;&#13;
+  text-orientation: sideways;&#13;
+  font-size: 1.6rem;&#13;
+  margin-top: 3rem;&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description>Wrapper widget for Global Update Set Studio.</description>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>guss</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>GUSS</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>nervous_sow</sys_created_by>
+        <sys_created_on>2024-10-26 15:34:17</sys_created_on>
+        <sys_id>0ac52e608365d210dd00cbb6feaad390</sys_id>
+        <sys_mod_count>167</sys_mod_count>
+        <sys_name>GUSS</sys_name>
+        <sys_package display_value="G.U.S.S" source="32910a1e83d95a10dd00cbb6feaad39c">32910a1e83d95a10dd00cbb6feaad39c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="G.U.S.S">32910a1e83d95a10dd00cbb6feaad39c</sys_scope>
+        <sys_update_name>sp_widget_0ac52e608365d210dd00cbb6feaad390</sys_update_name>
+        <sys_updated_by>nervous_sow</sys_updated_by>
+        <sys_updated_on>2024-11-03 00:28:58</sys_updated_on>
+        <template><![CDATA[<div id="top">
+
+  <div id="sidebar">
+    <i id="nav_action" class="glyphicon glyphicon-triangle-left" ng-click="c.toggleNav()"></i>
+
+    <div class="vert" ng-hide="c.showNav">
+      Global Update Set Studio
+    </div>
+
+    <div id="tree-container">
+      <widget id="guss-tree"></widget>
+    </div>
+    
+  </div>
+
+  <div id="main">
+    <div id="title-screen"> 
+      Global Update Set Studio
+    </div>
+
+    <widget id="guss-tabs"></widget>
+  </div>   
+
+</div>
+
+
+]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>0ac52e608365d210dd00cbb6feaad390</id>
+        <sys_created_by>nervous_sow</sys_created_by>
+        <sys_created_on>2024-10-26 21:58:53</sys_created_on>
+        <sys_id>bbcdbfe0832dd210dd00cbb6feaad3ac</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>nervous_sow</sys_updated_by>
+        <sys_updated_on>2024-10-26 21:58:53</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

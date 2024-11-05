@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope, $rootScope, $timeout, spUtil) {
+	var c = this;
+
+	$scope.tabs = [];
+	$scope.activeTabIndex = 0;	
+
+	c.setActiveTab = function(index) {
+		$scope.activeTabIndex = index;
+	};
+
+	$scope.removeTab = function(index) {
+		$scope.tabs.splice(index, 1);
+
+		// set active tab to the previous index
+		if ($scope.tabs.length > 0) {
+			if (index == 0) $scope.activeTabIndex = index;
+			else $scope.activeTabIndex = index - 1;
+		}
+		else {
+			$rootScope.$broadcast('removeTabEvent', index);
+		}		
+	};
+
+	$rootScope.$on('addTabEvent', function(event, obj) {
+		event.preventDefault();
+
+		// don't display if the file is already opened in a tab
+		var tab_found = false;
+		for (var i=0; i<$scope.tabs.length; i++) {
+			if ($scope.tabs[i].file_name == obj.file_name) {
+				// set as active tab
+				$scope.activeTabIndex = i;
+				tab_found = true;
+				break;
+			}
+		}
+
+		if (!tab_found) $scope.tabs.push(obj);
+
+		$timeout(function() {
+			$scope.activeTabIndex = $scope.tabs.length - 1;
+			var iframe = document.createElement("iframe");
+
+			var target = '/${table}.do?sys_id=${sysid}&sysparm_record_target=${table}&sysparm_record_list=sys_class_name%3D${table}';
+			target = target.replaceAll('${table}', obj.table).replaceAll('${sysid}', obj.sys_id);			
+			
+			iframe.src = target;
+			
+			document.getElementById('content-' + obj.file_name).appendChild(iframe);
+
+			// iframe.addEventListener("load", function(e){
+			// 	iframe.contentWindow.document.body.style.backgroundColor = "yellow";
+			// });
+
+			//var x = iframe.contentWindow.document.getElementsByTagName('button');//[0].style.display = 'none';
+
+			
+			////iframe.addEventListener('keydown', function(event) {
+				//alert('yooo')
+				//console.log(`Key pressed in iframe: ${event.key}`);
+				// You can add your custom logic here
+			//});
+
+			//let head = document.getElementById("myIframe").contentWindow.document.head || document.getElementById("myIframe").contentWindow.document.getElementsByTagName('head')[0];
+			
+			
+		});	
+	});
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.content {&#13;
+  position: relative;&#13;
+  overflow: hidden;&#13;
+  width: 100%;&#13;
+  padding-top:75%;&#13;
+}&#13;
+&#13;
+iframe {&#13;
+  position: absolute;&#13;
+  top: 0;&#13;
+  left: 0;&#13;
+  bottom: 0;&#13;
+  right: 0;&#13;
+  width: 100%;&#13;
+  height: 100%;&#13;
+  border: none;&#13;
+  overflow: scroll !important;&#13;
+  xborder: 2px solid #bbb;&#13;
+  xborder-top: none;&#13;
+  Xborder-left: 2px solid #aaa;&#13;
+  Xborder-top: 2px solid #aaa;&#13;
+  xborder-radius: 10px;&#13;
+}&#13;
+&#13;
+form.tab-form-demo .tab-pane {&#13;
+  xmargin: 20px 20px;&#13;
+  xwidth: 100%;&#13;
+  xmin-width: 100%;&#13;
+}&#13;
+&#13;
+&#13;
+.tab-style {&#13;
+	border: 1px solid #ccc;&#13;
+}&#13;
+&#13;
+.uib-tab {&#13;
+  font-size: 1.2rem;&#13;
+  background-color: #ddd;&#13;
+  xborder: 2px solid #666;&#13;
+}&#13;
+&#13;
+&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description>This is the Global Update Set Studio tabs widget.</description>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>guss-tabs</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>GUSS - Tabs</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>nervous_sow</sys_created_by>
+        <sys_created_on>2024-10-19 13:34:04</sys_created_on>
+        <sys_id>7027c216831d5a10dd00cbb6feaad3a2</sys_id>
+        <sys_mod_count>165</sys_mod_count>
+        <sys_name>GUSS - Tabs</sys_name>
+        <sys_package display_value="G.U.S.S" source="32910a1e83d95a10dd00cbb6feaad39c">32910a1e83d95a10dd00cbb6feaad39c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="G.U.S.S">32910a1e83d95a10dd00cbb6feaad39c</sys_scope>
+        <sys_update_name>sp_widget_7027c216831d5a10dd00cbb6feaad3a2</sys_update_name>
+        <sys_updated_by>nervous_sow</sys_updated_by>
+        <sys_updated_on>2024-11-03 00:05:43</sys_updated_on>
+        <template><![CDATA[<div class="container">
+
+  <div>
+    <uib-tabset active="activeTabIndex" class="tab-style" ng-if="tabs && tabs.length > 0">
+      <uib-tab active="activeTabIndex==$index" id="{{tab.file_name}}" index="$index" ng-repeat="tab in tabs" ng-click="$event.stopPropagation();c.setActiveTab($index);">
+        <uib-tab-heading>
+          {{tab.file_name}} <i class="glyphicon glyphicon-remove" ng-click="$event.preventDefault(); removeTab($index);" style="padding-left: 10px;"></i>
+        </uib-tab-heading>
+        <div id="content-{{tab.file_name}}" class="content"> </div>
+      </uib-tab>
+    </uib-tabset>
+  </div>
+
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>7027c216831d5a10dd00cbb6feaad3a2</id>
+        <sys_created_by>nervous_sow</sys_created_by>
+        <sys_created_on>2024-10-19 13:36:44</sys_created_on>
+        <sys_id>b3b7c656831d5a10dd00cbb6feaad38b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>nervous_sow</sys_updated_by>
+        <sys_updated_on>2024-10-19 13:36:44</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
