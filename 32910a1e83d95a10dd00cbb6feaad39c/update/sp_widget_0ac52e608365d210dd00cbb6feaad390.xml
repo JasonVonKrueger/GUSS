@@ -111,7 +111,7 @@
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
-        <description>Wrapper widget for Global Update Set Studio.</description>
+        <description>Wrapper widget for Global Update Set Studio..</description>
         <docs/>
         <field_list/>
         <has_preview>true</has_preview>
@@ -130,14 +130,14 @@
         <sys_created_by>nervous_sow</sys_created_by>
         <sys_created_on>2024-10-26 15:34:17</sys_created_on>
         <sys_id>0ac52e608365d210dd00cbb6feaad390</sys_id>
-        <sys_mod_count>167</sys_mod_count>
+        <sys_mod_count>168</sys_mod_count>
         <sys_name>GUSS</sys_name>
         <sys_package display_value="G.U.S.S" source="32910a1e83d95a10dd00cbb6feaad39c">32910a1e83d95a10dd00cbb6feaad39c</sys_package>
         <sys_policy/>
         <sys_scope display_value="G.U.S.S">32910a1e83d95a10dd00cbb6feaad39c</sys_scope>
         <sys_update_name>sp_widget_0ac52e608365d210dd00cbb6feaad390</sys_update_name>
         <sys_updated_by>nervous_sow</sys_updated_by>
-        <sys_updated_on>2024-11-03 00:28:58</sys_updated_on>
+        <sys_updated_on>2024-11-05 21:16:15</sys_updated_on>
         <template><![CDATA[<div id="top">
 
   <div id="sidebar">
