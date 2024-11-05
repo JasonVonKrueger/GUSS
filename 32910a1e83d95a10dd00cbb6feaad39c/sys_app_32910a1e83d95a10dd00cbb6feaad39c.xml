@@ -2,7 +2,7 @@
     <sys_app action="INSERT_OR_UPDATE">
         <active>true</active>
         <can_edit_in_studio>true</can_edit_in_studio>
-        <enforce_license>none</enforce_license>
+        <enforce_license>log</enforce_license>
         <guided_setup_guid/>
         <hide_on_ui>false</hide_on_ui>
         <ide_created>DS</ide_created>
@@ -14,7 +14,7 @@
         <license_definition/>
         <license_model>none</license_model>
         <logo/>
-        <menu/>
+        <menu display_value="Global Update Set Studio">e58fd1b283911e10dd00cbb6feaad307</menu>
         <name>G.U.S.S</name>
         <package_json/>
         <private>false</private>
@@ -32,9 +32,9 @@
         <sys_created_by>nervous_sow</sys_created_by>
         <sys_created_on>2024-10-19 13:09:54</sys_created_on>
         <sys_id>32910a1e83d95a10dd00cbb6feaad39c</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_updated_by>nervous_sow</sys_updated_by>
-        <sys_updated_on>2024-10-19 13:09:55</sys_updated_on>
+        <sys_updated_on>2024-11-05 16:41:32</sys_updated_on>
         <template/>
         <trackable>true</trackable>
         <uninstall_blocked>false</uninstall_blocked>

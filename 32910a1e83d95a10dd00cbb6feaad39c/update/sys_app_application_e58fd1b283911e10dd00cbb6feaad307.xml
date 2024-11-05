@@ -7,14 +7,14 @@
         <hint/>
         <name/>
         <order>100</order>
-        <roles/>
+        <roles>admin</roles>
         <sys_class_name>sys_app_application</sys_class_name>
         <sys_created_by>nervous_sow</sys_created_by>
         <sys_created_on>2024-10-20 23:58:38</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e58fd1b283911e10dd00cbb6feaad307</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Global Update Set Studio</sys_name>
         <sys_overrides/>
         <sys_package display_value="G.U.S.S" source="32910a1e83d95a10dd00cbb6feaad39c">32910a1e83d95a10dd00cbb6feaad39c</sys_package>
@@ -22,7 +22,7 @@
         <sys_scope display_value="G.U.S.S">32910a1e83d95a10dd00cbb6feaad39c</sys_scope>
         <sys_update_name>sys_app_application_e58fd1b283911e10dd00cbb6feaad307</sys_update_name>
         <sys_updated_by>nervous_sow</sys_updated_by>
-        <sys_updated_on>2024-10-20 23:58:38</sys_updated_on>
+        <sys_updated_on>2024-11-05 16:33:26</sys_updated_on>
         <title>Global Update Set Studio</title>
         <view_name/>
     </sys_app_application>
