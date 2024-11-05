@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_kmf_crypto_caller_policy">
+    <sys_kmf_crypto_caller_policy action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <approval_type/>
+        <check_script_hash>true</check_script_hash>
+        <crypto_module display_value="global.com_snc_core_automation_connection_credential_glideencrypter">550cd0b07722201099808d1168106121</crypto_module>
+        <crypto_spec/>
+        <granular_operation/>
+        <identity_group_alias/>
+        <impersonation>false</impersonation>
+        <instance_recipient/>
+        <owner>fa03219c39213110ec1daeadbed8480d</owner>
+        <policy_name>Allow GenerateNodeCredentials</policy_name>
+        <result>invalidate</result>
+        <script_hash>V7IEDKbJadce4CG1dv5pZtZeBCcaQfP9kx6pcopuI/A=</script_hash>
+        <script_table>sys_script_include</script_table>
+        <signature_data/>
+        <specify_purpose>false</specify_purpose>
+        <sys_class_name>sys_kmf_crypto_caller_policy</sys_class_name>
+        <sys_created_by>now.cpg</sys_created_by>
+        <sys_created_on>2023-09-26 08:12:55</sys_created_on>
+        <sys_id>ab2b69cd4de9b110f877b1d01c5a0823</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Cloud Provisioning and Governance" source="com.snc.cloud.mgmt">ee7140c593120210a8edf1d97bba103c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="G.U.S.S">32910a1e83d95a10dd00cbb6feaad39c</sys_scope>
+        <sys_update_name>sys_kmf_crypto_caller_policy_ab2b69cd4de9b110f877b1d01c5a0823</sys_update_name>
+        <sys_updated_by>nervous_sow</sys_updated_by>
+        <sys_updated_on>2024-11-05 21:21:35</sys_updated_on>
+        <target_role/>
+        <target_scope/>
+        <target_script>4361c93adb314300f199d9f0ce961906</target_script>
+        <type>1</type>
+        <used>false</used>
+    </sys_kmf_crypto_caller_policy>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="G.U.S.S">32910a1e83d95a10dd00cbb6feaad39c</claim_owner_scope>
+        <claim_timestamp>192fe3454480000001</claim_timestamp>
+        <metadata_update_name>sys_kmf_crypto_caller_policy_ab2b69cd4de9b110f877b1d01c5a0823</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>G.U.S.S</previous_claim_name>
+        <previous_claim_scope>32910a1e83d95a10dd00cbb6feaad39c</previous_claim_scope>
+        <sys_created_by>nervous_sow</sys_created_by>
+        <sys_created_on>2024-11-05 21:21:35</sys_created_on>
+        <sys_id>72255bf783ad1610dd00cbb6feaad3fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>nervous_sow</sys_updated_by>
+        <sys_updated_on>2024-11-05 21:21:35</sys_updated_on>
+    </sys_claim>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="G.U.S.S">32910a1e83d95a10dd00cbb6feaad39c</claim_owner_scope>
+        <claim_timestamp>192fe3454450000001</claim_timestamp>
+        <metadata_update_name>sys_kmf_crypto_caller_policy_ab2b69cd4de9b110f877b1d01c5a0823</metadata_update_name>
+        <previous_claim_app_version/>
+        <previous_claim_name>com.snc.cloud.mgmt</previous_claim_name>
+        <previous_claim_scope>com.snc.cloud.mgmt</previous_claim_scope>
+        <sys_created_by>nervous_sow</sys_created_by>
+        <sys_created_on>2024-11-05 21:21:35</sys_created_on>
+        <sys_id>7a255bf783ad1610dd00cbb6feaad3fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>nervous_sow</sys_updated_by>
+        <sys_updated_on>2024-11-05 21:21:35</sys_updated_on>
+    </sys_claim>
+</record_update>
