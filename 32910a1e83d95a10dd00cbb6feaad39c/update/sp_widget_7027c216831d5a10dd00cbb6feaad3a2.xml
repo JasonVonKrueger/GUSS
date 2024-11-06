@@ -43,30 +43,23 @@
 		$timeout(function() {
 			$scope.activeTabIndex = $scope.tabs.length - 1;
 			var iframe = document.createElement("iframe");
+			iframe.id = 'iframe' + Math.random().toString(36).substring(2,8);
 
 			var target = '/${table}.do?sys_id=${sysid}&sysparm_record_target=${table}&sysparm_record_list=sys_class_name%3D${table}';
 			target = target.replaceAll('${table}', obj.table).replaceAll('${sysid}', obj.sys_id);			
-			
+
 			iframe.src = target;
-			
+
 			document.getElementById('content-' + obj.file_name).appendChild(iframe);
 
-			// iframe.addEventListener("load", function(e){
-			// 	iframe.contentWindow.document.body.style.backgroundColor = "yellow";
-			// });
+			// wait for the iframe to load and do stuff
+			iframe.addEventListener('load', function() {
+				// hide the form's back button and arrows
+				this.contentWindow.document.getElementsByClassName('btn btn-default icon-chevron-left navbar-btn')[0].style.display = 'none';
+				this.contentWindow.document.getElementsByClassName('icon-arrow-up')[0].style.display = 'none';
+				this.contentWindow.document.getElementsByClassName('icon-arrow-down')[0].style.display = 'none';
+			});
 
-			//var x = iframe.contentWindow.document.getElementsByTagName('button');//[0].style.display = 'none';
-
-			
-			////iframe.addEventListener('keydown', function(event) {
-				//alert('yooo')
-				//console.log(`Key pressed in iframe: ${event.key}`);
-				// You can add your custom logic here
-			//});
-
-			//let head = document.getElementById("myIframe").contentWindow.document.head || document.getElementById("myIframe").contentWindow.document.getElementsByTagName('head')[0];
-			
-			
 		});	
 	});
 
@@ -89,19 +82,7 @@ iframe {&#13;
   height: 100%;&#13;
   border: none;&#13;
   overflow: scroll !important;&#13;
-  xborder: 2px solid #bbb;&#13;
-  xborder-top: none;&#13;
-  Xborder-left: 2px solid #aaa;&#13;
-  Xborder-top: 2px solid #aaa;&#13;
-  xborder-radius: 10px;&#13;
 }&#13;
-&#13;
-form.tab-form-demo .tab-pane {&#13;
-  xmargin: 20px 20px;&#13;
-  xwidth: 100%;&#13;
-  xmin-width: 100%;&#13;
-}&#13;
-&#13;
 &#13;
 .tab-style {&#13;
 	border: 1px solid #ccc;&#13;
@@ -110,10 +91,7 @@ form.tab-form-demo .tab-pane {&#13;
 .uib-tab {&#13;
   font-size: 1.2rem;&#13;
   background-color: #ddd;&#13;
-  xborder: 2px solid #666;&#13;
 }&#13;
-&#13;
-&#13;
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -136,14 +114,14 @@ form.tab-form-demo .tab-pane {&#13;
         <sys_created_by>nervous_sow</sys_created_by>
         <sys_created_on>2024-10-19 13:34:04</sys_created_on>
         <sys_id>7027c216831d5a10dd00cbb6feaad3a2</sys_id>
-        <sys_mod_count>165</sys_mod_count>
+        <sys_mod_count>194</sys_mod_count>
         <sys_name>GUSS - Tabs</sys_name>
         <sys_package display_value="G.U.S.S" source="32910a1e83d95a10dd00cbb6feaad39c">32910a1e83d95a10dd00cbb6feaad39c</sys_package>
         <sys_policy/>
         <sys_scope display_value="G.U.S.S">32910a1e83d95a10dd00cbb6feaad39c</sys_scope>
         <sys_update_name>sp_widget_7027c216831d5a10dd00cbb6feaad3a2</sys_update_name>
         <sys_updated_by>nervous_sow</sys_updated_by>
-        <sys_updated_on>2024-11-03 00:05:43</sys_updated_on>
+        <sys_updated_on>2024-11-06 16:33:51</sys_updated_on>
         <template><![CDATA[<div class="container">
 
   <div>
