@@ -38,60 +38,62 @@
 			}
 		}
 
-		if (!tab_found) $scope.tabs.push(obj);
+		if (!tab_found) {			
+			$scope.tabs.push(obj);
 
-		$timeout(function() {
-			$scope.activeTabIndex = $scope.tabs.length - 1;
-			var iframe = document.createElement("iframe");
-			iframe.id = 'iframe' + Math.random().toString(36).substring(2,8);
+			$timeout(function() {
+				$scope.activeTabIndex = $scope.tabs.length - 1;
+				var iframe = document.createElement("iframe");
+				iframe.id = 'iframe' + Math.random().toString(36).substring(2,8);
 
-			var target = '/${table}.do?sys_id=${sysid}&sysparm_record_target=${table}&sysparm_record_list=sys_class_name%3D${table}';
-			target = target.replaceAll('${table}', obj.table).replaceAll('${sysid}', obj.sys_id);			
+				var target = '/${table}.do?sys_id=${sysid}&sysparm_record_target=${table}&sysparm_record_list=sys_class_name%3D${table}';
+				target = target.replaceAll('${table}', obj.table).replaceAll('${sysid}', obj.sys_id);			
 
-			iframe.src = target;
+				iframe.src = target;
 
-			document.getElementById('content-' + obj.file_name).appendChild(iframe);
+				document.getElementById('content-' + obj.file_name).appendChild(iframe);
 
-			// wait for the iframe to load and do stuff
-			iframe.addEventListener('load', function() {
-				// hide the form's back button and arrows
-				this.contentWindow.document.getElementsByClassName('btn btn-default icon-chevron-left navbar-btn')[0].style.display = 'none';
-				this.contentWindow.document.getElementsByClassName('icon-arrow-up')[0].style.display = 'none';
-				this.contentWindow.document.getElementsByClassName('icon-arrow-down')[0].style.display = 'none';
-			});
-
-		});	
+				// wait for the iframe to load and do stuff
+				iframe.addEventListener('load', function() {
+					// hide the form's back button and arrows
+					this.contentWindow.document.getElementsByClassName('btn btn-default icon-chevron-left navbar-btn')[0].style.display = 'none';
+					this.contentWindow.document.getElementsByClassName('icon-arrow-up')[0].style.display = 'none';
+					this.contentWindow.document.getElementsByClassName('icon-arrow-down')[0].style.display = 'none';		
+				});
+			});	
+		}
+		
 	});
 
 };]]></client_script>
         <controller_as>c</controller_as>
-        <css>.content {&#13;
-  position: relative;&#13;
-  overflow: hidden;&#13;
-  width: 100%;&#13;
-  padding-top:75%;&#13;
-}&#13;
-&#13;
-iframe {&#13;
-  position: absolute;&#13;
-  top: 0;&#13;
-  left: 0;&#13;
-  bottom: 0;&#13;
-  right: 0;&#13;
-  width: 100%;&#13;
-  height: 100%;&#13;
-  border: none;&#13;
-  overflow: scroll !important;&#13;
-}&#13;
-&#13;
-.tab-style {&#13;
-	border: 1px solid #ccc;&#13;
-}&#13;
-&#13;
-.uib-tab {&#13;
-  font-size: 1.2rem;&#13;
-  background-color: #ddd;&#13;
-}&#13;
+        <css>.content {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 75%;
+}
+
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  overflow: scroll !important;
+}
+
+.tab-style {
+	border: 1px solid #ccc;
+}
+
+.uib-tab {
+  font-size: 1.2rem;
+  background-color: #ddd;
+}
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -114,14 +116,14 @@ iframe {&#13;
         <sys_created_by>nervous_sow</sys_created_by>
         <sys_created_on>2024-10-19 13:34:04</sys_created_on>
         <sys_id>7027c216831d5a10dd00cbb6feaad3a2</sys_id>
-        <sys_mod_count>194</sys_mod_count>
+        <sys_mod_count>210</sys_mod_count>
         <sys_name>GUSS - Tabs</sys_name>
         <sys_package display_value="G.U.S.S" source="32910a1e83d95a10dd00cbb6feaad39c">32910a1e83d95a10dd00cbb6feaad39c</sys_package>
         <sys_policy/>
         <sys_scope display_value="G.U.S.S">32910a1e83d95a10dd00cbb6feaad39c</sys_scope>
         <sys_update_name>sp_widget_7027c216831d5a10dd00cbb6feaad3a2</sys_update_name>
         <sys_updated_by>nervous_sow</sys_updated_by>
-        <sys_updated_on>2024-11-06 16:33:51</sys_updated_on>
+        <sys_updated_on>2024-11-07 02:34:22</sys_updated_on>
         <template><![CDATA[<div class="container">
 
   <div>

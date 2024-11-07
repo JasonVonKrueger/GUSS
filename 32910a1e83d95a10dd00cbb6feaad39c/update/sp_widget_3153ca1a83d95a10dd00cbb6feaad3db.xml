@@ -58,110 +58,103 @@
 	************************************************/	
 }]]></client_script>
         <controller_as>c</controller_as>
-        <css>&#13;
-.bold {&#13;
-  font-weight: 700;&#13;
-  font-style: normal;&#13;
-}&#13;
-&#13;
-.top-container {&#13;
-  font-optical-sizing: auto;&#13;
-  font-weight: 400;&#13;
-  font-style: normal;&#13;
-}&#13;
-&#13;
-.panel-default .panel-heading, .panel-heading.panel-la-jolla-default {&#13;
-  color: #4a4a4a;&#13;
-}&#13;
-&#13;
-.panel-title {&#13;
-  margin-top: 0;&#13;
-  margin-bottom: 0;&#13;
-}&#13;
-&#13;
-.panel-heading {&#13;
-  padding: .8rem .5rem;&#13;
-  border-bottom: none;&#13;
-  border-top-right-radius: .3rem;&#13;
-  border-top-left-radius: .3rem;&#13;
-}&#13;
-&#13;
-.panel-group {&#13;
-  width: 90%;&#13;
-}&#13;
-&#13;
-.which-set {&#13;
-  font-size: 1.5rem;&#13;
-  max-width: 500px; &#13;
-}&#13;
-&#13;
-.new-file {&#13;
-  font-size: 1.65rem;&#13;
-  font-weight: 900;&#13;
-  color: #00adb5;&#13;
-}&#13;
-&#13;
-.selected {&#13;
-  font-weight: 100;&#13;
-  font-style: italic;&#13;
-}&#13;
-&#13;
-summary { &#13;
-  cursor: pointer; &#13;
-  font-weight: 700;&#13;
-}&#13;
-&#13;
-.tree {&#13;
-  position: relative;&#13;
-  margin-top: .5rem;&#13;
-  font-weight: 400;&#13;
-  line-height: 1.2;&#13;
-  color: #ddd;&#13;
-&#13;
-  ul {&#13;
-    padding-left: 5px;&#13;
-    list-style: none;&#13;
-    letter-spacing: -1px;&#13;
-&#13;
-    li {&#13;
-      position: relative;&#13;
-      padding-top: 5px;&#13;
-      padding-bottom: 0;&#13;
-      padding-left: 15px;&#13;
-      -webkit-box-sizing: border-box;&#13;
-      -moz-box-sizing: border-box;&#13;
-      box-sizing: border-box;&#13;
-      user-select: none;&#13;
-      letter-spacing: -1px;&#13;
-&#13;
-      &amp;:before {&#13;
-        position: absolute;&#13;
-        top: 15px;&#13;
-        left: 0;&#13;
-        width: 10px;&#13;
-        height: 1px;&#13;
-        margin: auto;&#13;
-        content: '';&#13;
-        background-color: #ccc;&#13;
-      }&#13;
-&#13;
-      &amp;:after {&#13;
-        position: absolute;&#13;
-        top: 0;&#13;
-        bottom: 0;&#13;
-        left: 0;&#13;
-        width: 1px;&#13;
-        height: 100%;&#13;
-        content: '';&#13;
-        background-color: #ccc;&#13;
-      }&#13;
-&#13;
-      &amp;:last-child:after {&#13;
-        height: 15px;&#13;
-      }&#13;
-    }&#13;
-  }&#13;
-}&#13;
+        <css>
+.bold {
+  font-weight: 700;
+  font-style: normal;
+}
+
+.top-container {
+  font-weight: 400;
+  font-style: normal;
+}
+
+.panel-default .panel-heading, .panel-heading.panel-la-jolla-default {
+  color: #4a4a4a;
+}
+
+.panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.panel-heading {
+  padding: .8rem .5rem;
+  border-bottom: none;
+  border-top-right-radius: .3rem;
+  border-top-left-radius: .3rem;
+}
+
+.which-set {
+  font-size: 1.5rem;
+  max-width: 500px; 
+}
+
+.new-file {
+  font-size: 1.65rem;
+  font-weight: 900;
+  color: #00adb5;
+}
+
+.selected {
+  font-weight: 100;
+  font-style: italic;
+}
+
+summary { 
+  cursor: pointer; 
+  font-weight: 700;
+}
+
+.tree {
+  position: relative;
+  margin-top: .5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #ddd;
+
+  ul {
+    padding-left: 5px;
+    list-style: none;
+    letter-spacing: -1px;
+
+    li {
+      position: relative;
+      padding-top: 5px;
+      padding-bottom: 0;
+      padding-left: 15px;
+      box-sizing: border-box;
+      user-select: none;
+      letter-spacing: -1px;
+
+      &amp;:before {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        width: 10px;
+        height: 1px;
+        margin: auto;
+        content: '';
+        background-color: #ccc;
+      }
+
+      &amp;:after {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 1px;
+        height: 100%;
+        content: '';
+        background-color: #ccc;
+      }
+
+      &amp;:last-child:after {
+        height: 15px;
+      }
+    }
+  }
+}
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -292,14 +285,14 @@ summary { &#13;
         <sys_created_by>nervous_sow</sys_created_by>
         <sys_created_on>2024-10-19 13:17:29</sys_created_on>
         <sys_id>3153ca1a83d95a10dd00cbb6feaad3db</sys_id>
-        <sys_mod_count>41</sys_mod_count>
+        <sys_mod_count>45</sys_mod_count>
         <sys_name>GUSS - Tree</sys_name>
         <sys_package display_value="G.U.S.S" source="32910a1e83d95a10dd00cbb6feaad39c">32910a1e83d95a10dd00cbb6feaad39c</sys_package>
         <sys_policy/>
         <sys_scope display_value="G.U.S.S">32910a1e83d95a10dd00cbb6feaad39c</sys_scope>
         <sys_update_name>sp_widget_3153ca1a83d95a10dd00cbb6feaad3db</sys_update_name>
         <sys_updated_by>nervous_sow</sys_updated_by>
-        <sys_updated_on>2024-10-30 01:12:59</sys_updated_on>
+        <sys_updated_on>2024-11-07 02:38:43</sys_updated_on>
         <template><![CDATA[<div class="top-container">
 
   <div class="which-set">
