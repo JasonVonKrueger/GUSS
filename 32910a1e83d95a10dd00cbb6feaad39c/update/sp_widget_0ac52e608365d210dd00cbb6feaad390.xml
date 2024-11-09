@@ -21,11 +21,11 @@
 		event.preventDefault();
 		
 		if (!c.showNav && (event.ctrlKey && event.code === 'ArrowRight')) {
-			document.getElementById('nav_action').click();
+			document.getElementById('nav-action').click();
 		}
 		
 		if (c.showNav && (event.ctrlKey && event.code === 'ArrowLeft')) {
-			document.getElementById('nav_action').click();
+			document.getElementById('nav-action').click();
 		}		
 	});
 
@@ -34,18 +34,18 @@
 			// hide it
 			document.getElementById('tree-container').style.display = 'none';
 			document.getElementById('sidebar').style.width = '40px';
-			document.getElementById('main').style.marginLeft= '0';
-			document.getElementById('nav_action').classList.remove('glyphicon-triangle-left');
-			document.getElementById('nav_action').classList.add('glyphicon-triangle-right');
+			document.getElementById('main-contents').style.marginLeft= '0';
+			document.getElementById('nav-action').classList.remove('glyphicon-triangle-left');
+			document.getElementById('nav-action').classList.add('glyphicon-triangle-right');
 			c.showNav = false;
 		}
 		else {
 			// show it
 			document.getElementById('sidebar').style.width = '280px';
-			document.getElementById('main').style.marginLeft = '280px';
+			document.getElementById('main-contents').style.marginLeft = '280px';
 			document.getElementById('tree-container').style.display = 'block';
-			document.getElementById('nav_action').classList.remove('glyphicon-triangle-right');
-			document.getElementById('nav_action').classList.add('glyphicon-triangle-left');
+			document.getElementById('nav-action').classList.remove('glyphicon-triangle-right');
+			document.getElementById('nav-action').classList.add('glyphicon-triangle-left');
 			c.showNav = true;
 		}
 
@@ -67,7 +67,12 @@
   padding-left: 1rem;
 }
 
-#sidebar #nav_action {
+#nav-action {
+  position: absolute;
+  top: 0;
+  right: 2px;
+  font-size: 1.6rem;
+  margin-left: 50px;
   padding: 8px 8px 8px 22px;
   text-decoration: none;
   border: none;
@@ -76,19 +81,11 @@
   transition: 0.3s;
 }
 
-#nav_action:hover {
+#nav-action:hover {
   color: #fff;
 }
 
-#sidebar #nav_action {
-  position: absolute;
-  top: 0;
-  right: 2px;
-  font-size: 1.6rem;
-  margin-left: 50px;
-}
-
-#main {
+#main-contents {
   margin-left: 250px;
   transition: margin-left .5s;
 }
@@ -131,18 +128,18 @@
         <sys_created_by>nervous_sow</sys_created_by>
         <sys_created_on>2024-10-26 15:34:17</sys_created_on>
         <sys_id>0ac52e608365d210dd00cbb6feaad390</sys_id>
-        <sys_mod_count>176</sys_mod_count>
+        <sys_mod_count>188</sys_mod_count>
         <sys_name>GUSS</sys_name>
         <sys_package display_value="G.U.S.S" source="32910a1e83d95a10dd00cbb6feaad39c">32910a1e83d95a10dd00cbb6feaad39c</sys_package>
         <sys_policy/>
         <sys_scope display_value="G.U.S.S">32910a1e83d95a10dd00cbb6feaad39c</sys_scope>
         <sys_update_name>sp_widget_0ac52e608365d210dd00cbb6feaad390</sys_update_name>
         <sys_updated_by>nervous_sow</sys_updated_by>
-        <sys_updated_on>2024-11-07 02:22:40</sys_updated_on>
-        <template><![CDATA[<div id="top">
+        <sys_updated_on>2024-11-09 17:51:50</sys_updated_on>
+        <template><![CDATA[<div>
 
   <div id="sidebar">
-    <i id="nav_action" class="glyphicon glyphicon-triangle-left" ng-click="c.toggleNav()"></i>
+    <i id="nav-action" class="glyphicon glyphicon-triangle-left" ng-click="c.toggleNav()"></i>
 
     <div class="vert" ng-hide="c.showNav">
       Global Update Set Studio
@@ -154,7 +151,7 @@
 
   </div>
 
-  <div id="main">
+  <div id="main-contents">
     <div id="title-screen"> 
       Global Update Set Studio
     </div>

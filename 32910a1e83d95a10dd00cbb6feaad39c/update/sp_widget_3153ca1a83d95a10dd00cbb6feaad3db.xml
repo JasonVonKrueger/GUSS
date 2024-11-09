@@ -64,15 +64,6 @@
   font-style: normal;
 }
 
-.top-container {
-  font-weight: 400;
-  font-style: normal;
-}
-
-.panel-default .panel-heading, .panel-heading.panel-la-jolla-default {
-  color: #4a4a4a;
-}
-
 .panel-title {
   margin-top: 0;
   margin-bottom: 0;
@@ -85,7 +76,7 @@
   border-top-left-radius: .3rem;
 }
 
-.which-set {
+.set-info {
   font-size: 1.5rem;
   max-width: 500px; 
 }
@@ -285,41 +276,39 @@ summary {
         <sys_created_by>nervous_sow</sys_created_by>
         <sys_created_on>2024-10-19 13:17:29</sys_created_on>
         <sys_id>3153ca1a83d95a10dd00cbb6feaad3db</sys_id>
-        <sys_mod_count>45</sys_mod_count>
+        <sys_mod_count>51</sys_mod_count>
         <sys_name>GUSS - Tree</sys_name>
         <sys_package display_value="G.U.S.S" source="32910a1e83d95a10dd00cbb6feaad39c">32910a1e83d95a10dd00cbb6feaad39c</sys_package>
         <sys_policy/>
         <sys_scope display_value="G.U.S.S">32910a1e83d95a10dd00cbb6feaad39c</sys_scope>
         <sys_update_name>sp_widget_3153ca1a83d95a10dd00cbb6feaad3db</sys_update_name>
         <sys_updated_by>nervous_sow</sys_updated_by>
-        <sys_updated_on>2024-11-07 02:38:43</sys_updated_on>
-        <template><![CDATA[<div class="top-container">
-
-  <div class="which-set">
-    <div>
-      <span class="bold">Application scope:</span> {{c.data.set_scope}}
-    </div> 
-    <div>
-      <span class="bold">Update set:</span> <a href="/now/nav/ui/classic/params/target/sys_update_set.do%3Fsys_id%3D{{c.data.set_sysid}}" target="_blank">{{c.data.set_name}}</a>
-			<!-- this is where the update set picker would go -->
-    </div>
-  </div>
-
-  <div class="tree">
-    <ul>
-      <li ng-repeat="t in c.data.folders track by $index">
-        <details>
-          <summary class="bold"> {{t.folder}}</summary>
-          <ul>
-            <li ng-repeat="g in t.files" ng-click="c.addTab(g.table_name, g.sys_id, g.file_name)" id="{{g.sys_id}}"> {{g.target_name}}</li>
-            <li ng-click="c.addTab(t.files[0].table_name, -1, 'New file')" class="new-file">+</li>
-          </ul>
-        </details>
-      </li>      
-    </ul>
+        <sys_updated_on>2024-11-09 17:36:27</sys_updated_on>
+        <template><![CDATA[<div class="set-info">
+  <div>
+    <span class="bold">Application scope:</span> {{c.data.set_scope}}
   </div> 
+  <div>
+    <span class="bold">Update set:</span> <a href="/now/nav/ui/classic/params/target/sys_update_set.do%3Fsys_id%3D{{c.data.set_sysid}}" target="_blank">{{c.data.set_name}}</a>
+    <!-- this is where the update set picker would go -->
+  </div>
+</div>
+
+<div class="tree">
+  <ul>
+    <li ng-repeat="t in c.data.folders track by $index">
+      <details>
+        <summary class="bold"> {{t.folder}}</summary>
+        <ul>
+          <li ng-repeat="g in t.files" ng-click="c.addTab(g.table_name, g.sys_id, g.file_name)" id="{{g.sys_id}}"> {{g.target_name}}</li>
+          <li ng-click="c.addTab(t.files[0].table_name, -1, 'New file')" class="new-file">+</li>
+        </ul>
+      </details>
+    </li>      
+  </ul>
+</div> 
   
-</div>]]></template>
+]]></template>
     </sp_widget>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>3153ca1a83d95a10dd00cbb6feaad3db</id>
