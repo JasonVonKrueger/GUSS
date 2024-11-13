@@ -59,6 +59,9 @@
 					this.contentWindow.document.getElementsByClassName('btn btn-default icon-chevron-left navbar-btn')[0].style.display = 'none';
 					this.contentWindow.document.getElementsByClassName('icon-arrow-up')[0].style.display = 'none';
 					this.contentWindow.document.getElementsByClassName('icon-arrow-down')[0].style.display = 'none';		
+					
+					//this.contentWindow.document.querySelector('body').style.overflowY = 'hidden';
+					//this.contentWindow.document.querySelector('body').style.overflowX = 'hidden';
 				});
 			});	
 		}
@@ -84,7 +87,6 @@ iframe {
   height: 100%;
   border: none;
   overflow: clip !important;
-  overflow-clip-margin: content-box !important;
 }
 
 .tab-style {
@@ -116,14 +118,14 @@ iframe {
         <sys_created_by>nervous_sow</sys_created_by>
         <sys_created_on>2024-10-19 13:34:04</sys_created_on>
         <sys_id>7027c216831d5a10dd00cbb6feaad3a2</sys_id>
-        <sys_mod_count>219</sys_mod_count>
+        <sys_mod_count>225</sys_mod_count>
         <sys_name>GUSS - Tabs</sys_name>
         <sys_package display_value="G.U.S.S" source="32910a1e83d95a10dd00cbb6feaad39c">32910a1e83d95a10dd00cbb6feaad39c</sys_package>
         <sys_policy/>
         <sys_scope display_value="G.U.S.S">32910a1e83d95a10dd00cbb6feaad39c</sys_scope>
         <sys_update_name>sp_widget_7027c216831d5a10dd00cbb6feaad3a2</sys_update_name>
         <sys_updated_by>nervous_sow</sys_updated_by>
-        <sys_updated_on>2024-11-09 18:11:03</sys_updated_on>
+        <sys_updated_on>2024-11-11 16:44:53</sys_updated_on>
         <template><![CDATA[<uib-tabset active="activeTabIndex" class="tab-style" ng-if="tabs && tabs.length > 0">
   <uib-tab active="activeTabIndex==$index" id="{{tab.file_name}}" index="$index" ng-repeat="tab in tabs" ng-click="$event.stopPropagation();c.setActiveTab($index);">
     <uib-tab-heading>

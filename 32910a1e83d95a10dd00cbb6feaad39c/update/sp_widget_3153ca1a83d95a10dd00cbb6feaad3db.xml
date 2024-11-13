@@ -217,15 +217,26 @@ summary {
 
 		var files = [];
 		while (gr.next()) {
-			var o = {};
-			o.target_name = gr.getValue('target_name');
-
 			var name = gr.getValue('name');
-			o.table_name = name.replace(/_[0-9a-f]{32}/, '');
-			o.sys_id = name.substr(name.lastIndexOf('_')+1);
-			o.file_name = getFileName(o.table_name, o.sys_id);
+			var o = {};
+			
+			try {
+				// get the update's table and sys_id from the payload
+				var payload = gr.payload;
+				var xmlDoc = new XMLDocument2();
+				xmlDoc.parseXML(payload);
 
-			files.push(o);
+				o.target_name = gr.getValue('target_name');
+				o.table_name = (xmlDoc.getFirstNode('//sys_class_name')).getTextContent();
+				o.sys_id = (xmlDoc.getFirstNode('//sys_id')).getTextContent();
+				o.file_name = getFileName(o.table_name, o.sys_id);					
+			}
+			catch(err) {
+				console.log('GUSS: Failed to load ' + name + '::' + err.message);
+			}
+			finally {
+				files.push(o);	
+			}
 		}
 
 		return files;
@@ -276,14 +287,14 @@ summary {
         <sys_created_by>nervous_sow</sys_created_by>
         <sys_created_on>2024-10-19 13:17:29</sys_created_on>
         <sys_id>3153ca1a83d95a10dd00cbb6feaad3db</sys_id>
-        <sys_mod_count>51</sys_mod_count>
+        <sys_mod_count>63</sys_mod_count>
         <sys_name>GUSS - Tree</sys_name>
         <sys_package display_value="G.U.S.S" source="32910a1e83d95a10dd00cbb6feaad39c">32910a1e83d95a10dd00cbb6feaad39c</sys_package>
         <sys_policy/>
         <sys_scope display_value="G.U.S.S">32910a1e83d95a10dd00cbb6feaad39c</sys_scope>
         <sys_update_name>sp_widget_3153ca1a83d95a10dd00cbb6feaad3db</sys_update_name>
         <sys_updated_by>nervous_sow</sys_updated_by>
-        <sys_updated_on>2024-11-09 17:36:27</sys_updated_on>
+        <sys_updated_on>2024-11-13 03:09:15</sys_updated_on>
         <template><![CDATA[<div class="set-info">
   <div>
     <span class="bold">Application scope:</span> {{c.data.set_scope}}
