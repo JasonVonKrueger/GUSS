@@ -48,7 +48,7 @@
 
 				var target = '/${table}.do?sys_id=${sysid}&sysparm_record_target=${table}&sysparm_record_list=sys_class_name%3D${table}';
 				target = target.replaceAll('${table}', obj.table).replaceAll('${sysid}', obj.sys_id);			
-
+				
 				iframe.src = target;
 
 				document.getElementById('content-' + obj.file_name).appendChild(iframe);
@@ -59,13 +59,19 @@
 					this.contentWindow.document.getElementsByClassName('btn btn-default icon-chevron-left navbar-btn')[0].style.display = 'none';
 					this.contentWindow.document.getElementsByClassName('icon-arrow-up')[0].style.display = 'none';
 					this.contentWindow.document.getElementsByClassName('icon-arrow-down')[0].style.display = 'none';		
-					
+
 					//this.contentWindow.document.querySelector('body').style.overflowY = 'hidden';
 					//this.contentWindow.document.querySelector('body').style.overflowX = 'hidden';
+
+					this.contentWindow.document.addEventListener('click', function(event) {
+						// we're trying to listen for the Save button to be clicked
+						// problem is that the Save button isn't default on many forms
+						// this is a ToDo item
+					});						
 				});
 			});	
 		}
-		
+
 	});
 
 };]]></client_script>
@@ -118,14 +124,14 @@ iframe {
         <sys_created_by>nervous_sow</sys_created_by>
         <sys_created_on>2024-10-19 13:34:04</sys_created_on>
         <sys_id>7027c216831d5a10dd00cbb6feaad3a2</sys_id>
-        <sys_mod_count>225</sys_mod_count>
+        <sys_mod_count>237</sys_mod_count>
         <sys_name>GUSS - Tabs</sys_name>
         <sys_package display_value="G.U.S.S" source="32910a1e83d95a10dd00cbb6feaad39c">32910a1e83d95a10dd00cbb6feaad39c</sys_package>
         <sys_policy/>
         <sys_scope display_value="G.U.S.S">32910a1e83d95a10dd00cbb6feaad39c</sys_scope>
         <sys_update_name>sp_widget_7027c216831d5a10dd00cbb6feaad3a2</sys_update_name>
         <sys_updated_by>nervous_sow</sys_updated_by>
-        <sys_updated_on>2024-11-11 16:44:53</sys_updated_on>
+        <sys_updated_on>2024-11-23 22:28:40</sys_updated_on>
         <template><![CDATA[<uib-tabset active="activeTabIndex" class="tab-style" ng-if="tabs && tabs.length > 0">
   <uib-tab active="activeTabIndex==$index" id="{{tab.file_name}}" index="$index" ng-repeat="tab in tabs" ng-click="$event.stopPropagation();c.setActiveTab($index);">
     <uib-tab-heading>
@@ -134,6 +140,9 @@ iframe {
     <div id="content-{{tab.file_name}}" class="content"> </div>
   </uib-tab>
 </uib-tabset>
+
+
+
 
 
 ]]></template>

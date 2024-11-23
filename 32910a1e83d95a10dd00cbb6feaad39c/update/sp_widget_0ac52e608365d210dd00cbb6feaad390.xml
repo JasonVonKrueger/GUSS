@@ -17,6 +17,7 @@
 	
 	// Define hotkeys for opening and closing the sidebar...
 	// Or not.  The iframe needs to listen too.
+	/*
 	window.addEventListener('keydown', function(event) {
 		event.preventDefault();
 		
@@ -28,6 +29,7 @@
 			document.getElementById('nav-action').click();
 		}		
 	});
+	*/
 
 	c.toggleNav = function() {
 		if (c.showNav) {
@@ -41,8 +43,8 @@
 		}
 		else {
 			// show it
-			document.getElementById('sidebar').style.width = '280px';
-			document.getElementById('main-contents').style.marginLeft = '280px';
+			document.getElementById('sidebar').style.width = '300px';
+			document.getElementById('main-contents').style.marginLeft = '300px';
 			document.getElementById('tree-container').style.display = 'block';
 			document.getElementById('nav-action').classList.remove('glyphicon-triangle-right');
 			document.getElementById('nav-action').classList.add('glyphicon-triangle-left');
@@ -55,7 +57,7 @@
         <controller_as>c</controller_as>
         <css>#sidebar {
   height: 100%;
-  width: 280px;
+  width: 300px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -86,7 +88,7 @@
 }
 
 #main-contents {
-  margin-left: 250px;
+  margin-left: 300px;
   transition: margin-left .5s;
 }
 
@@ -128,37 +130,32 @@
         <sys_created_by>nervous_sow</sys_created_by>
         <sys_created_on>2024-10-26 15:34:17</sys_created_on>
         <sys_id>0ac52e608365d210dd00cbb6feaad390</sys_id>
-        <sys_mod_count>188</sys_mod_count>
+        <sys_mod_count>229</sys_mod_count>
         <sys_name>GUSS</sys_name>
         <sys_package display_value="G.U.S.S" source="32910a1e83d95a10dd00cbb6feaad39c">32910a1e83d95a10dd00cbb6feaad39c</sys_package>
         <sys_policy/>
         <sys_scope display_value="G.U.S.S">32910a1e83d95a10dd00cbb6feaad39c</sys_scope>
         <sys_update_name>sp_widget_0ac52e608365d210dd00cbb6feaad390</sys_update_name>
         <sys_updated_by>nervous_sow</sys_updated_by>
-        <sys_updated_on>2024-11-09 17:51:50</sys_updated_on>
+        <sys_updated_on>2024-11-23 22:17:04</sys_updated_on>
         <template><![CDATA[<div>
-
   <div id="sidebar">
     <i id="nav-action" class="glyphicon glyphicon-triangle-left" ng-click="c.toggleNav()"></i>
 
     <div class="vert" ng-hide="c.showNav">
       Global Update Set Studio
     </div>
-
     <div id="tree-container">
       <widget id="guss-tree"></widget>
     </div>
-
   </div>
 
   <div id="main-contents">
     <div id="title-screen"> 
-      Global Update Set Studio
-    </div>
-
+      Global Update Set Studio  <br /> 
+    </div> 
     <widget id="guss-tabs"></widget>
   </div>   
-
 </div>
 
 

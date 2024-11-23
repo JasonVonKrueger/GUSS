@@ -5,12 +5,29 @@
 	var c = this;
 	var selectedElement = null;
 
-	c.updateset = {
+	// add a new file tab when a file type is selected
+	c.onNewFileSelect = function(file_type) {
+		c.server.get({
+			action: 'getFileInfo',
+			file_type: file_type
+		}).then(function(result) {
+			document.getElementById('new_file_picker').value = '';
+			c.addTab(result.data.file_info, -1, 'New File');
+		});	
+	}	
+	
+	// refresh the file tree
+	// ToDo: need to figure out how to auto-refresh
+	c.refresh = function() {
+		spUtil.update($scope);
+	}
+
+	c.filetype = {
 		displayValue: c.data.set_name,
 		value: c.data.set_sysid, 
 		name: 'updateset'	
 	}
-	
+
 	c.addTab = function(table_name, sys_id, file_name) {
 		// highlight the selected file
 		// var clickedElement = document.getElementById(sys_id);
@@ -31,21 +48,21 @@
 
 	/***********************************************
 	Code for a potential update set picker. I stuck it here to get it out of the way.
-	
+
 	The sn-record-picker below would, of course, go in the HTML
-	
+
       <sn-record-picker style="display: none;" id="updateset" field="c.updateset" table="'sys_update_set'"
                         display-field="'name'"
                         value-field="'sys_id'" 
                         search-fields="name" page-size="100" on-change="onChange()"></sn-record-picker>
-	
+
 	// obviously this listener needs work	
 	// listen for update set changes
 	$scope.$on("field.change", function(evt, parms) {
 		if (parms.field.name == 'updateset') {
 			//if (parms.field.newValue != parms.field.oldValue) {
 			//console.log(JSON.stringify(parms));
-		
+
 			c.server.get({
 				action: 'change_update_set',
 				updateset: c.updateset.value,
@@ -77,14 +94,42 @@
 }
 
 .set-info {
-  font-size: 1.5rem;
-  max-width: 500px; 
+  font-size: 1.5rem; 
 }
 
 .new-file {
   font-size: 1.65rem;
   font-weight: 900;
   color: #00adb5;
+}
+
+#new_file_picker {
+	width: 95%;
+  font-size: 1.2rem;
+  color: #222;
+  padding: 5px;
+  background: #fff;
+  border-color: #fff;
+  border-radius: 4px;
+
+}
+
+#refresh {
+  color: #aaa;
+ font-size: 2rem; 
+}
+
+#refresh:hover {
+  color: #fff;
+	cursor: pointer; 
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 40px;
+  align-items: center;
 }
 
 .selected {
@@ -145,14 +190,13 @@ summary {
       }
     }
   }
-}
-</css>
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description>This is the Global Update Set Studio tree widget.</description>
         <docs/>
         <field_list/>
-        <has_preview>false</has_preview>
+        <has_preview>true</has_preview>
         <id>guss-tree</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
@@ -162,23 +206,31 @@ summary {
         <roles/>
         <script><![CDATA[(function() {
 	var au = new ArrayUtil();
-	var current_set, set_info;
-
-	if (input && input.action == 'change_update_set') {
-		set_info = getSetInfo(input.updateset);	
-	}
-	else {
-		current_set = (new GlideUpdateSet()).get();
-		set_info = getSetInfo(current_set);	
-	}
+	var current_set = (new GlideUpdateSet()).get();
+	var set_info = getSetInfo(current_set);
+	var set  = [];
+	var folders = getFolders(current_set);
 
 	data.set_name = set_info.name;
 	data.set_scope = set_info.app_scope;
 	data.set_sysid = set_info.sysid;
 	data.retdata = set_info.name;
+	data.selectedRecords = [];
+	
+	if (input) {
+		if (input.action == 'getFileInfo') {
+			data.file_info = getFileInfo(input.file_type);
+		}
+	}
 
-	var set  = [];
-	var folders = getFolders(current_set);
+	var gr = new GlideAggregate('sys_update_xml'); 
+	gr.groupBy('type'); 
+	gr.query(); 
+
+	while (gr.next()) { 
+		data.selectedRecords.push(gr.getValue('type')); 
+	} 	
+
 
 	// get the files for each folder type
 	folders.forEach(function(folder) {
@@ -189,6 +241,36 @@ summary {
 	});
 
 	data.folders = set;
+
+	function getFileInfo(file_type) {
+		var gr = new GlideRecord('sys_update_xml');
+		gr.addEncodedQuery('type=' + file_type);
+		gr.setLimit(1);
+		gr.query();
+
+		var files = [];
+		if (gr.next()) {
+			var name = gr.getValue('name');
+			var o = {};
+
+			try {
+				// get the update's table and sys_id from the payload
+				var payload = gr.payload;
+				var xmlDoc = new XMLDocument2();
+				xmlDoc.parseXML(payload);
+
+				o.table_name = (xmlDoc.getFirstNode('//sys_class_name')).getTextContent();
+				return o.table_name;
+
+			} catch (err) {
+				//console.log('GUSS: Failed to load ' + name);
+			} finally {
+				files.push(o);
+			}
+		}
+
+		return files;
+	}
 
 	function getFolders(update_set) {
 		var gr = new GlideRecord('sys_update_xml');
@@ -212,14 +294,14 @@ summary {
 	function getFiles(update_set, type) {
 		var gr = new GlideRecord('sys_update_xml');
 		gr.addEncodedQuery('update_set=' + update_set + '^type=' + type + '^action!=delete');
-		gr.orderBy('name');
+		gr.orderBy('target_name');
 		gr.query();	
 
 		var files = [];
 		while (gr.next()) {
 			var name = gr.getValue('name');
 			var o = {};
-			
+
 			try {
 				// get the update's table and sys_id from the payload
 				var payload = gr.payload;
@@ -247,8 +329,7 @@ summary {
 		if (gr.get(set)) {
 			return { name: gr.getValue('name'),
 							app_scope: gr.getValue('application'),
-							sysid: gr.getValue('sys_id')
-						 };
+							sysid: gr.getValue('sys_id') };
 		}
 
 		return false;
@@ -272,7 +353,7 @@ summary {
 
 		return types;
 	}
-	
+
 	function getFileName(table, sys_id) {
 		var gr = new GlideRecord(table);
 		if (gr.get(sys_id)) {
@@ -280,30 +361,44 @@ summary {
 		}
 	}
 
-
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>nervous_sow</sys_created_by>
         <sys_created_on>2024-10-19 13:17:29</sys_created_on>
         <sys_id>3153ca1a83d95a10dd00cbb6feaad3db</sys_id>
-        <sys_mod_count>65</sys_mod_count>
+        <sys_mod_count>315</sys_mod_count>
         <sys_name>GUSS - Tree</sys_name>
         <sys_package display_value="G.U.S.S" source="32910a1e83d95a10dd00cbb6feaad39c">32910a1e83d95a10dd00cbb6feaad39c</sys_package>
         <sys_policy/>
         <sys_scope display_value="G.U.S.S">32910a1e83d95a10dd00cbb6feaad39c</sys_scope>
         <sys_update_name>sp_widget_3153ca1a83d95a10dd00cbb6feaad3db</sys_update_name>
         <sys_updated_by>nervous_sow</sys_updated_by>
-        <sys_updated_on>2024-11-13 03:20:33</sys_updated_on>
+        <sys_updated_on>2024-11-23 22:26:21</sys_updated_on>
         <template><![CDATA[<div class="set-info">
   <div>
     <span class="bold">Application scope:</span> {{c.data.set_scope}}
   </div> 
+
   <div>
     <span class="bold">Update set:</span> <a href="/now/nav/ui/classic/params/target/sys_update_set.do%3Fsys_id%3D{{c.data.set_sysid}}" target="_blank">{{c.data.set_name}}</a>
     <!-- this is where the update set picker would go -->
   </div>
 </div>
+
+<div class="flex-container">
+  <div style="flex-grow: 8">
+    <input id="new_file_picker" 
+           type="text" 
+           ng-model="selected" 
+           uib-typeahead="item for item in c.data.selectedRecords | filter:$viewValue | limitTo:8" class="form-control" placeholder="New File..."
+           typeahead-min-length="2"
+           typeahead-on-select="c.onNewFileSelect($item)">
+  </div>
+  <div style="flex-grow: 2">
+    <i id="refresh" class="glyphicon glyphicon-refresh" ng-click="c.refresh()" title="Refresh this widget"></i>
+  </div>
+</div> 
 
 <div class="tree">
   <ul>
@@ -317,18 +412,16 @@ summary {
       </details>
     </li>      
   </ul>
-</div> 
-  
-]]></template>
+</div> ]]></template>
     </sp_widget>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>3153ca1a83d95a10dd00cbb6feaad3db</id>
         <sys_created_by>nervous_sow</sys_created_by>
         <sys_created_on>2024-10-19 13:24:22</sys_created_on>
         <sys_id>66e44252831d5a10dd00cbb6feaad32b</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_updated_by>nervous_sow</sys_updated_by>
-        <sys_updated_on>2024-10-19 13:24:22</sys_updated_on>
+        <sys_updated_on>2024-11-15 04:06:07</sys_updated_on>
         <table>sp_widget</table>
         <use_es_latest>false</use_es_latest>
     </sys_es_latest_script>
