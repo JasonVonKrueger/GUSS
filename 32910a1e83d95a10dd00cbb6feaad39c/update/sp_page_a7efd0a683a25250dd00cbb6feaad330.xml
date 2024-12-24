@@ -1,54 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
     <sp_page action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <css>$background-primary: #fff !default;
-$background-left-pane: #303841 !default;
-$font-family: "SourceSansPro", Helvetica, Arial, sans-serif !default;
-
-* {
-  overflow: hidden !important;
-}
-
-html {
-  overflow: scroll !important;
-}
-
-.bold {
-  font-weight: 700;
-  font-style: normal;
-}
-
-.panel-title {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.panel-heading {
-  padding: .8rem .5rem;
-  border-bottom: none;
-  border-top-right-radius: .3rem;
-  border-top-left-radius: .3rem;
-}
-
-.flex-item-left {
-  color: #ddd;
-  background: $background-left-pane;
-}
-
-.flex-item-right {
-  width: 100%;
-  position: relative;
-  margin-top: 5px;
-  margin-right: 2rem;
-  margin-left: -5px;
-}
-
-.navbar {
-  display: none;
-}
-
-.sp-ac-root button.sp-ac-btn {
-	display: none !important; 
+        <css>$background-primary: #fff !default;&#13;
+$background-left-pane: #303841 !default;&#13;
+$font-family: "SourceSansPro", Helvetica, Arial, sans-serif !default;&#13;
+&#13;
+* {&#13;
+  overflow: hidden !important;&#13;
+}&#13;
+&#13;
+html {&#13;
+  overflow: scroll !important;&#13;
+}&#13;
+&#13;
+.bold {&#13;
+  font-weight: 700;&#13;
+  font-style: normal;&#13;
+}&#13;
+&#13;
+.panel-title {&#13;
+  margin-top: 0;&#13;
+  margin-bottom: 0;&#13;
+}&#13;
+&#13;
+.panel-heading {&#13;
+  padding: .8rem .5rem;&#13;
+  border-bottom: none;&#13;
+  border-top-right-radius: .3rem;&#13;
+  border-top-left-radius: .3rem;&#13;
+}&#13;
+&#13;
+.flex-item-left {&#13;
+  color: #ddd;&#13;
+  background: $background-left-pane;&#13;
+}&#13;
+&#13;
+.flex-item-right {&#13;
+  width: 100%;&#13;
+  height: auto;&#13;
+  position: relative;&#13;
+  margin-top: 5px;&#13;
+  margin-right: 2rem;&#13;
+  margin-left: -5px;&#13;
+}&#13;
+&#13;
+.navbar {&#13;
+  display: none;&#13;
+}&#13;
+&#13;
+/* hide the portal virtual agent chat thingy */&#13;
+.sp-ac-root button.sp-ac-btn {&#13;
+	display: none !important; &#13;
 }</css>
         <draft>false</draft>
         <dynamic_title_structure/>
@@ -59,19 +61,19 @@ html {
         <public>false</public>
         <roles>admin</roles>
         <seo_script/>
-        <short_description/>
+        <short_description>Global Update Set Studio</short_description>
         <sys_class_name>sp_page</sys_class_name>
         <sys_created_by>nervous_sow</sys_created_by>
         <sys_created_on>2024-12-21 04:00:07</sys_created_on>
         <sys_id>a7efd0a683a25250dd00cbb6feaad330</sys_id>
-        <sys_mod_count>82</sys_mod_count>
+        <sys_mod_count>91</sys_mod_count>
         <sys_name>guss</sys_name>
         <sys_package display_value="G.U.S.S" source="32910a1e83d95a10dd00cbb6feaad39c">32910a1e83d95a10dd00cbb6feaad39c</sys_package>
         <sys_policy/>
         <sys_scope display_value="G.U.S.S">32910a1e83d95a10dd00cbb6feaad39c</sys_scope>
         <sys_update_name>sp_page_a7efd0a683a25250dd00cbb6feaad330</sys_update_name>
         <sys_updated_by>nervous_sow</sys_updated_by>
-        <sys_updated_on>2024-12-23 16:44:46</sys_updated_on>
+        <sys_updated_on>2024-12-24 15:10:00</sys_updated_on>
         <title>G.U.S.S.</title>
         <use_seo_script>false</use_seo_script>
     </sp_page>
