@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
+    <sp_page action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <css>$background-primary: #fff !default;
+$background-left-pane: #303841 !default;
+$font-family: "SourceSansPro", Helvetica, Arial, sans-serif !default;
+
+* {
+  overflow: hidden !important;
+}
+
+html {
+  overflow: scroll !important;
+}
+
+.bold {
+  font-weight: 700;
+  font-style: normal;
+}
+
+.panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.panel-heading {
+  padding: .8rem .5rem;
+  border-bottom: none;
+  border-top-right-radius: .3rem;
+  border-top-left-radius: .3rem;
+}
+
+.flex-item-left {
+  color: #ddd;
+  background: $background-left-pane;
+}
+
+.flex-item-right {
+  width: 100%;
+  position: relative;
+  margin-top: 5px;
+  margin-right: 2rem;
+  margin-left: -5px;
+}
+
+.navbar {
+  display: none;
+}
+
+.sp-ac-root button.sp-ac-btn {
+	display: none !important; 
+}</css>
+        <draft>false</draft>
+        <dynamic_title_structure/>
+        <human_readable_url_structure/>
+        <id>guss</id>
+        <internal>false</internal>
+        <omit_watcher>false</omit_watcher>
+        <public>false</public>
+        <roles>admin</roles>
+        <seo_script/>
+        <short_description/>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>nervous_sow</sys_created_by>
+        <sys_created_on>2024-12-21 04:00:07</sys_created_on>
+        <sys_id>a7efd0a683a25250dd00cbb6feaad330</sys_id>
+        <sys_mod_count>82</sys_mod_count>
+        <sys_name>guss</sys_name>
+        <sys_package display_value="G.U.S.S" source="32910a1e83d95a10dd00cbb6feaad39c">32910a1e83d95a10dd00cbb6feaad39c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="G.U.S.S">32910a1e83d95a10dd00cbb6feaad39c</sys_scope>
+        <sys_update_name>sp_page_a7efd0a683a25250dd00cbb6feaad330</sys_update_name>
+        <sys_updated_by>nervous_sow</sys_updated_by>
+        <sys_updated_on>2024-12-23 16:44:46</sys_updated_on>
+        <title>G.U.S.S.</title>
+        <use_seo_script>false</use_seo_script>
+    </sp_page>
+    <sys_translated_text action="delete_multiple" query="documentkey=a7efd0a683a25250dd00cbb6feaad330"/>
+</record_update>

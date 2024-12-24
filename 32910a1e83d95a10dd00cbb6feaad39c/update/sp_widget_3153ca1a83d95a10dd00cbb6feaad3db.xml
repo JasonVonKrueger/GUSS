@@ -75,22 +75,12 @@
 	************************************************/	
 }]]></client_script>
         <controller_as>c</controller_as>
-        <css>
-.bold {
-  font-weight: 700;
-  font-style: normal;
-}
-
-.panel-title {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.panel-heading {
-  padding: .8rem .5rem;
-  border-bottom: none;
-  border-top-right-radius: .3rem;
-  border-top-left-radius: .3rem;
+        <css>.top {
+ padding: 15px; 
+  max-height: 100%;
+  min-height: 100%;
+  height: 100%;
+  position: fixed;
 }
 
 .set-info {
@@ -107,16 +97,14 @@
 	width: 95%;
   font-size: 1.2rem;
   color: #222;
-  padding: 5px;
   background: #fff;
   border-color: #fff;
   border-radius: 4px;
-
 }
 
 #refresh {
   color: #aaa;
- font-size: 2rem; 
+  font-size: 2rem; 
 }
 
 #refresh:hover {
@@ -124,11 +112,12 @@
 	cursor: pointer; 
 }
 
-.flex-container {
+.new-file-container {
   display: flex;
   flex-direction: row;
   width: 100%;
   height: 40px;
+  margin-top: 20px;
   align-items: center;
 }
 
@@ -367,52 +356,56 @@ summary {
         <sys_created_by>nervous_sow</sys_created_by>
         <sys_created_on>2024-10-19 13:17:29</sys_created_on>
         <sys_id>3153ca1a83d95a10dd00cbb6feaad3db</sys_id>
-        <sys_mod_count>315</sys_mod_count>
+        <sys_mod_count>336</sys_mod_count>
         <sys_name>GUSS - Tree</sys_name>
         <sys_package display_value="G.U.S.S" source="32910a1e83d95a10dd00cbb6feaad39c">32910a1e83d95a10dd00cbb6feaad39c</sys_package>
         <sys_policy/>
         <sys_scope display_value="G.U.S.S">32910a1e83d95a10dd00cbb6feaad39c</sys_scope>
         <sys_update_name>sp_widget_3153ca1a83d95a10dd00cbb6feaad3db</sys_update_name>
         <sys_updated_by>nervous_sow</sys_updated_by>
-        <sys_updated_on>2024-11-23 22:26:21</sys_updated_on>
-        <template><![CDATA[<div class="set-info">
-  <div>
-    <span class="bold">Application scope:</span> {{c.data.set_scope}}
+        <sys_updated_on>2024-12-23 16:37:04</sys_updated_on>
+        <template><![CDATA[<div class="top">
+
+  <div class="set-info">
+    <div>
+      <span>Application scope:</span> {{c.data.set_scope}}
+    </div> 
+
+    <div>
+      <span class="bold">Update set:</span> <a href="/now/nav/ui/classic/params/target/sys_update_set.do%3Fsys_id%3D{{c.data.set_sysid}}" target="_blank">{{c.data.set_name}}</a>
+      <!-- this is where the update set picker would go -->
+    </div>
+  </div>
+	
+  <div class="new-file-container">
+    <div style="flex-grow: 8">
+      <input id="new_file_picker" class="input-sm"
+             type="text" 
+             ng-model="selected" 
+             uib-typeahead="item for item in c.data.selectedRecords | filter:$viewValue | limitTo:8" class="form-control" placeholder="New File..."
+             typeahead-min-length="2"
+             typeahead-on-select="c.onNewFileSelect($item)">
+    </div>
+    <div style="flex-grow: 2">
+      <i id="refresh" class="glyphicon glyphicon-refresh" ng-click="c.refresh()" title="Refresh this widget"></i>
+    </div>
   </div> 
 
-  <div>
-    <span class="bold">Update set:</span> <a href="/now/nav/ui/classic/params/target/sys_update_set.do%3Fsys_id%3D{{c.data.set_sysid}}" target="_blank">{{c.data.set_name}}</a>
-    <!-- this is where the update set picker would go -->
-  </div>
-</div>
+  <div class="tree">
+    <ul>
+      <li ng-repeat="t in c.data.folders track by $index">
+        <details>
+          <summary class="bold"> {{t.folder}}</summary>
+          <ul>
+            <li ng-repeat="g in t.files" ng-click="c.addTab(g.table_name, g.sys_id, g.file_name)" id="{{g.sys_id}}"> {{g.target_name}}</li>
+            <li ng-click="c.addTab(t.files[0].table_name, -1, 'New file')" class="new-file">+</li>
+          </ul>
+        </details>
+      </li>      
+    </ul>
+  </div> 
 
-<div class="flex-container">
-  <div style="flex-grow: 8">
-    <input id="new_file_picker" 
-           type="text" 
-           ng-model="selected" 
-           uib-typeahead="item for item in c.data.selectedRecords | filter:$viewValue | limitTo:8" class="form-control" placeholder="New File..."
-           typeahead-min-length="2"
-           typeahead-on-select="c.onNewFileSelect($item)">
-  </div>
-  <div style="flex-grow: 2">
-    <i id="refresh" class="glyphicon glyphicon-refresh" ng-click="c.refresh()" title="Refresh this widget"></i>
-  </div>
-</div> 
-
-<div class="tree">
-  <ul>
-    <li ng-repeat="t in c.data.folders track by $index">
-      <details>
-        <summary class="bold"> {{t.folder}}</summary>
-        <ul>
-          <li ng-repeat="g in t.files" ng-click="c.addTab(g.table_name, g.sys_id, g.file_name)" id="{{g.sys_id}}"> {{g.target_name}}</li>
-          <li ng-click="c.addTab(t.files[0].table_name, -1, 'New file')" class="new-file">+</li>
-        </ul>
-      </details>
-    </li>      
-  </ul>
-</div> ]]></template>
+</div>]]></template>
     </sp_widget>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>3153ca1a83d95a10dd00cbb6feaad3db</id>
