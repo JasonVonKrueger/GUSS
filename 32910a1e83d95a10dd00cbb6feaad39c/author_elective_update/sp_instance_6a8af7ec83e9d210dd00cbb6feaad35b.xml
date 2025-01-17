@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph>empty</glyph>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">2a7a77ec83e9d210dd00cbb6feaad3c4</sp_column>
+        <sp_widget display_value="GUSS">0ac52e608365d210dd00cbb6feaad390</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>nervous_sow</sys_created_by>
+        <sys_created_on>2024-10-26 21:44:55</sys_created_on>
+        <sys_id>6a8af7ec83e9d210dd00cbb6feaad35b</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="G.U.S.S" source="32910a1e83d95a10dd00cbb6feaad39c">32910a1e83d95a10dd00cbb6feaad39c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="G.U.S.S">32910a1e83d95a10dd00cbb6feaad39c</sys_scope>
+        <sys_update_name>sp_instance_6a8af7ec83e9d210dd00cbb6feaad35b</sys_update_name>
+        <sys_updated_by>nervous_sow</sys_updated_by>
+        <sys_updated_on>2025-01-12 17:45:09</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=6a8af7ec83e9d210dd00cbb6feaad35b"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="G.U.S.S">32910a1e83d95a10dd00cbb6feaad39c</application>
+        <file_path/>
+        <instance_id>6cdaef9ddb56319cebdd2a59139619d0</instance_id>
+        <instance_name>dev202845</instance_name>
+        <name>sp_instance_6a8af7ec83e9d210dd00cbb6feaad35b</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph>empty</glyph><id/><order>1</order><roles/><short_description/><size>md</size><sp_column display_value="1">2a7a77ec83e9d210dd00cbb6feaad3c4</sp_column><sp_widget display_value="GUSS">0ac52e608365d210dd00cbb6feaad390</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>nervous_sow</sys_created_by><sys_created_on>2024-10-26 21:44:55</sys_created_on><sys_id>6a8af7ec83e9d210dd00cbb6feaad35b</sys_id><sys_mod_count>12</sys_mod_count><sys_name/><sys_package display_value="G.U.S.S" source="32910a1e83d95a10dd00cbb6feaad39c">32910a1e83d95a10dd00cbb6feaad39c</sys_package><sys_policy/><sys_scope display_value="G.U.S.S">32910a1e83d95a10dd00cbb6feaad39c</sys_scope><sys_update_name>sp_instance_6a8af7ec83e9d210dd00cbb6feaad35b</sys_update_name><sys_updated_by>nervous_sow</sys_updated_by><sys_updated_on>2025-01-12 17:45:09</sys_updated_on><title/><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=6a8af7ec83e9d210dd00cbb6feaad35b"/></record_update>]]></payload>
+        <payload_hash>-1534495770</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>387e48e8d9b13110cedf7dffddb48f09</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>nervous_sow</sys_created_by>
+        <sys_created_on>2025-01-12 17:45:09</sys_created_on>
+        <sys_id>e7bfec7983cb1a10dd00cbb6feaad33b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1945b9e9fb50000001</sys_recorded_at>
+        <sys_updated_by>nervous_sow</sys_updated_by>
+        <sys_updated_on>2025-01-12 17:45:09</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>2fbfec7947cb1a104283e1cf8d82983a</update_guid>
+        <update_guid_history>2fbfec7947cb1a104283e1cf8d82983a:-1534495770,ca2fa0b90ccb1a1084d681ea68f6e2e7:-2016301700,d8e7599e5d7ed2107a2d4d000468beda:1559574962,4c97519ea77ed210ab596509957c4a9a:1081709602,2e8e9866caa25250294447a0d50d1a6a:1685758543,314ed82698a252506c32981a118bd985:-472081788,8ce408300b221a10cc27e99b92d97688:-1124823103,2ec40834c7221a1021d6a066efc89233:-810062952,cf720070cb221a1010263f1db70fada4:-1520376189,f5220070fc221a10f3dfbe464e73c890:81271932,9d120cbcb6eed6107889b2bb5f8e11fe:-472081788,c4e1c8bc39eed610841f1d27e9b2b693:144685337,d39af3ec2de9d2103211cec8e93723c6:-108596355</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">e5b1074f830f5210dd00cbb6feaad361</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>nervous_sow</sys_created_by>
+        <sys_created_on>2025-01-17 01:35:18</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>091a995b8072418181d11b0ddc46b0c1</sys_id>
+        <sys_metadata>6a8af7ec83e9d210dd00cbb6feaad35b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="G.U.S.S" source="32910a1e83d95a10dd00cbb6feaad39c">32910a1e83d95a10dd00cbb6feaad39c</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="G.U.S.S">32910a1e83d95a10dd00cbb6feaad39c</sys_scope>
+        <sys_scope_delete display_value="">37b318f376204758bee63ee3c6cc3310</sys_scope_delete>
+        <sys_update_name>sp_instance_6a8af7ec83e9d210dd00cbb6feaad35b</sys_update_name>
+        <sys_update_version display_value="sp_instance_6a8af7ec83e9d210dd00cbb6feaad35b">e7bfec7983cb1a10dd00cbb6feaad33b</sys_update_version>
+        <sys_updated_by>nervous_sow</sys_updated_by>
+        <sys_updated_on>2025-01-17 01:35:18</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
