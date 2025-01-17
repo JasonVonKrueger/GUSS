@@ -21,14 +21,15 @@
 		}
 		else {
 			$rootScope.$broadcast('removeTabEvent', index);
-		// show title screen
-		document.getElementById('title-screen').style.display = 'flex';
+			
+			// show title screen
+			document.getElementById('title-screen').style.display = 'flex';
 		}		
 	};
 
 	$rootScope.$on('addTabEvent', function(event, obj) {
 		event.preventDefault();
-		
+
 		// hide title screen
 		document.getElementById('title-screen').style.display = 'none';
 
@@ -55,7 +56,7 @@
 
 				var target = '/${table}.do?sys_id=${sysid}&sysparm_record_target=${table}&sysparm_record_list=sys_class_name%3D${table}&sysparm_isdevstudio=true';
 				target = target.replaceAll('${table}', obj.table).replaceAll('${sysid}', obj.sys_id);			
-				
+
 				iframe.src = target;
 
 				document.getElementById('content-' + obj.file_name).appendChild(iframe);
@@ -65,11 +66,8 @@
 					// hide the form's back button and arrows
 					this.contentWindow.document.getElementsByClassName('btn btn-default icon-chevron-left navbar-btn')[0].style.display = 'none';
 					this.contentWindow.document.getElementsByClassName('icon-arrow-up')[0].style.display = 'none';
-					this.contentWindow.document.getElementsByClassName('icon-arrow-down')[0].style.display = 'none';		
-
-					//this.contentWindow.document.querySelector('body').style.overflowY = 'hidden';
-					//this.contentWindow.document.querySelector('body').style.overflowX = 'hidden';
-
+					this.contentWindow.document.getElementsByClassName('icon-arrow-down')[0].style.display = 'none';	
+					
 					this.contentWindow.document.addEventListener('click', function(event) {
 						// we're trying to listen for the Save button to be clicked
 						// problem is that the Save button isn't default on many forms
@@ -86,8 +84,6 @@
         <css>.content {
   position: relative;
   width: 100%;
-  padding-top: 55%;
-  border: 3px;
 }
 
 #title-screen {
@@ -96,28 +92,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 600px;
+  height: 300px;
 }
 
 iframe {
   position: absolute;
- 	border: 0;
+  border: 2px solid #ccc;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.tab-style {
-  width: 100%;
-  height: 100%;
+  min-width: 100%;
+  min-height: 95vh;
 }
 
 .uib-tab {
   font-size: 1.2rem;
   background-color: #ddd;
+}
+
+.nav-tabs {
+  border: 0; 
 }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -130,7 +125,7 @@ iframe {
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
         <name>GUSS - Tabs</name>
         <option_schema/>
-        <public>false</public>
+        <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
 
@@ -140,20 +135,19 @@ iframe {
         <sys_created_by>nervous_sow</sys_created_by>
         <sys_created_on>2024-10-19 13:34:04</sys_created_on>
         <sys_id>7027c216831d5a10dd00cbb6feaad3a2</sys_id>
-        <sys_mod_count>286</sys_mod_count>
+        <sys_mod_count>363</sys_mod_count>
         <sys_name>GUSS - Tabs</sys_name>
         <sys_package display_value="G.U.S.S" source="32910a1e83d95a10dd00cbb6feaad39c">32910a1e83d95a10dd00cbb6feaad39c</sys_package>
         <sys_policy/>
         <sys_scope display_value="G.U.S.S">32910a1e83d95a10dd00cbb6feaad39c</sys_scope>
         <sys_update_name>sp_widget_7027c216831d5a10dd00cbb6feaad3a2</sys_update_name>
         <sys_updated_by>nervous_sow</sys_updated_by>
-        <sys_updated_on>2024-12-24 15:45:05</sys_updated_on>
-        <template><![CDATA[<div class="top">
-  
+        <sys_updated_on>2025-01-17 01:09:18</sys_updated_on>
+        <template><![CDATA[<div style="xwidth: 100%; xheight: 100vh;">
   <div id="title-screen"> 
     Global Update Set Studio
   </div> 
-  
+
   <uib-tabset active="activeTabIndex" class="tab-style" ng-if="tabs && tabs.length > 0">
     <uib-tab active="activeTabIndex==$index" id="{{tab.file_name}}" index="$index" ng-repeat="tab in tabs" ng-click="$event.stopPropagation();c.setActiveTab($index);">
       <uib-tab-heading>
@@ -162,8 +156,9 @@ iframe {
       <div id="content-{{tab.file_name}}" class="content"> </div>
     </uib-tab>
   </uib-tabset>
+</div>
 
-</div>]]></template>
+]]></template>
     </sp_widget>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>7027c216831d5a10dd00cbb6feaad3a2</id>
