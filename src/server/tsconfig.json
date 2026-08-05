@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "../../dist/server",
+    "module": "es2022",
+    "target": "es2022",
+    "moduleResolution": "bundler",
+    "allowJs": true,
+    "declaration": false,
+    "sourceMap": false,
+    "skipLibCheck": true,
+    "noUnusedLocals": false,
+    "checkJs": true
+  },
+  "include": [
+    "./**/*.ts",
+    "./**/*.js"
+  ],
+  "exclude": [
+    "**/*.now.ts"
+  ]
+}
