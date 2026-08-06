@@ -7,14 +7,24 @@
 }
 
 .guss-sidebar {
-  width: 320px;
-  min-width: 280px;
+  flex-shrink: 0;
   background-color: #1b2a3e;
   color: #e0e8f0;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border-right: 1px solid #2d4a6a;
+}
+
+.guss-resize-handle {
+  width: 4px;
+  flex-shrink: 0;
+  background-color: #2d4a6a;
+  cursor: col-resize;
+  transition: background-color 0.15s;
+}
+
+.guss-resize-handle:hover {
+  background-color: #4a7aa8;
 }
 
 .guss-content {
