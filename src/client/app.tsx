@@ -84,7 +84,7 @@ export default function App() {
       </div>
       <div className="guss-resize-handle" onMouseDown={onMouseDown} />
       <div className="guss-content">
-        <ContentFrame selectedFile={selectedFile} />
+        <ContentFrame selectedFile={selectedFile} updateSetData={data} />
       </div>
     </div>
   );
