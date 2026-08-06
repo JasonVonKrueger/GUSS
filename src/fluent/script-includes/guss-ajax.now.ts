@@ -28,11 +28,13 @@ GussAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         gr.query();
 
         while (gr.next()) {
+            var typeDisplay = gr.getDisplayValue('type') || gr.getValue('type') || 'Unknown';
+            var targetName = gr.getValue('target_name') || gr.getDisplayValue('target_name') || gr.getDisplayValue('name') || gr.getValue('name');
             result.files.push({
                 sys_id: gr.getUniqueValue(),
                 name: gr.getValue('name'),
-                type: gr.getValue('type'),
-                target_name: gr.getDisplayValue('name'),
+                type: typeDisplay,
+                target_name: targetName,
                 table: gr.getValue('name').split('_').slice(0, -1).join('_'),
                 action: gr.getValue('action')
             });
