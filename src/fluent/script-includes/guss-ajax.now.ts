@@ -6,9 +6,26 @@ GussAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
     getUpdateSetFiles: function() {
         var result = { updateSet: {}, folders: [] };
 
-        // GlideUpdateManager2.get() is scope-safe; GlideUpdateSet().get() uses
-        // getPreference which is blocked in scoped apps.
-        var updateSetId = GlideUpdateManager2.get();
+        // Resolve current update set using user preference, which works in scoped apps.
+        var updateSetId = '';
+        var prefGr = new GlideRecord('sys_user_preference');
+        prefGr.addQuery('name', 'sys_update_set');
+        prefGr.addQuery('user', gs.getUserID());
+        prefGr.orderByDesc('sys_updated_on');
+        prefGr.setLimit(1);
+        prefGr.query();
+        if (prefGr.next()) {
+            updateSetId = prefGr.getValue('value') || '';
+        }
+
+        // Fallback for environments where preference is not available.
+        if (!updateSetId) {
+            try {
+                updateSetId = GlideUpdateManager2.get() || '';
+            } catch (e) {
+                updateSetId = '';
+            }
+        }
 
         if (!updateSetId) {
             return JSON.stringify(result);
