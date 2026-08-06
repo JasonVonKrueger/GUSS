@@ -4,10 +4,11 @@ import { ScriptInclude } from "@servicenow/sdk/core";
 const gussAjaxScript = `var GussAjax = Class.create();
 GussAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
     getUpdateSetFiles: function() {
-        var result = { updateSet: {}, files: [] };
+        var result = { updateSet: {}, folders: [] };
 
-        var gus = new GlideUpdateSet();
-        var updateSetId = gus.get();
+        // GlideUpdateManager2.get() is scope-safe; GlideUpdateSet().get() uses
+        // getPreference which is blocked in scoped apps.
+        var updateSetId = GlideUpdateManager2.get();
 
         if (!updateSetId) {
             return JSON.stringify(result);
@@ -17,27 +18,70 @@ GussAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         if (usGr.get(updateSetId)) {
             result.updateSet = {
                 sys_id: usGr.getUniqueValue(),
-                name: usGr.getValue('name')
+                name: usGr.getValue('name'),
+                app_scope: usGr.getValue('application')
             };
         }
 
-        var gr = new GlideRecord('sys_update_xml');
-        gr.addQuery('update_set', updateSetId);
-        gr.orderBy('type');
-        gr.orderBy('name');
-        gr.query();
+        // Collect unique types (folders) in order
+        var au = new ArrayUtil();
+        var folderTypes = [];
+        var typeGr = new GlideRecord('sys_update_xml');
+        typeGr.addEncodedQuery('update_set=' + updateSetId);
+        typeGr.orderBy('type');
+        typeGr.query();
+        while (typeGr.next()) {
+            var t = typeGr.getValue('type');
+            if (!au.contains(folderTypes, t)) {
+                folderTypes.push(t);
+            }
+        }
 
-        while (gr.next()) {
-            var typeDisplay = gr.getDisplayValue('type') || gr.getValue('type') || 'Unknown';
-            var targetName = gr.getValue('target_name') || gr.getDisplayValue('target_name') || gr.getDisplayValue('name') || gr.getValue('name');
-            result.files.push({
-                sys_id: gr.getUniqueValue(),
-                name: gr.getValue('name'),
-                type: typeDisplay,
-                target_name: targetName,
-                table: gr.getValue('name').split('_').slice(0, -1).join('_'),
-                action: gr.getValue('action')
-            });
+        // For each type, collect files (skip deletes)
+        for (var i = 0; i < folderTypes.length; i++) {
+            var folder = folderTypes[i];
+            var files = [];
+
+            var gr = new GlideRecord('sys_update_xml');
+            gr.addEncodedQuery('update_set=' + updateSetId + '^type=' + folder + '^action!=delete');
+            gr.orderBy('target_name');
+            gr.query();
+
+            while (gr.next()) {
+                var name = gr.getValue('name');
+                var o = {
+                    sys_id: gr.getUniqueValue(),
+                    name: name,
+                    type: folder,
+                    target_name: gr.getValue('target_name') || name,
+                    action: gr.getValue('action'),
+                    table_name: '',
+                    artifact_sys_id: '',
+                    file_name: ''
+                };
+
+                try {
+                    var payload = gr.payload + '';
+                    var xmlDoc = new XMLDocument2();
+                    xmlDoc.parseXML(payload);
+                    var classNode = xmlDoc.getFirstNode('//sys_class_name');
+                    var idNode = xmlDoc.getFirstNode('//sys_id');
+                    if (classNode) { o.table_name = classNode.getTextContent(); }
+                    if (idNode) { o.artifact_sys_id = idNode.getTextContent(); }
+                    if (o.table_name && o.artifact_sys_id) {
+                        var rec = new GlideRecord(o.table_name);
+                        if (rec.get(o.artifact_sys_id)) {
+                            o.file_name = rec.getDisplayValue();
+                        }
+                    }
+                } catch (err) {
+                    gs.log('GUSS: Failed to parse payload for ' + name);
+                }
+
+                files.push(o);
+            }
+
+            result.folders.push({ folder: folder, files: files });
         }
 
         return JSON.stringify(result);

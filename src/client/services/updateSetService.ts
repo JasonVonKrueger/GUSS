@@ -3,32 +3,36 @@ export interface UpdateSetFile {
   name: string;
   type: string;
   target_name: string;
-  table: string;
   action: string;
+  table_name: string;
+  artifact_sys_id: string;
+  file_name: string;
+}
+
+export interface UpdateSetFolder {
+  folder: string;
+  files: UpdateSetFile[];
 }
 
 export interface UpdateSetInfo {
   sys_id: string;
   name: string;
+  app_scope?: string;
 }
 
 export interface UpdateSetData {
   updateSet: UpdateSetInfo;
-  files: UpdateSetFile[];
+  folders: UpdateSetFolder[];
 }
 
 export interface GroupedFiles {
   [type: string]: UpdateSetFile[];
 }
 
-export function groupFilesByType(files: UpdateSetFile[]): GroupedFiles {
+export function groupFilesByType(data: UpdateSetData): GroupedFiles {
   const grouped: GroupedFiles = {};
-  for (const file of files) {
-    const type = file.type || "Unknown";
-    if (!grouped[type]) {
-      grouped[type] = [];
-    }
-    grouped[type].push(file);
+  for (const folder of data.folders ?? []) {
+    grouped[folder.folder] = folder.files;
   }
   return grouped;
 }
@@ -60,5 +64,5 @@ export async function fetchUpdateSetFiles(): Promise<UpdateSetData> {
     return JSON.parse(answerEl.textContent);
   }
 
-  return { updateSet: { sys_id: "", name: "" }, files: [] };
+  return { updateSet: { sys_id: "", name: "" }, folders: [] };
 }

@@ -17,7 +17,7 @@ export default function TreeView({ data, loading, selectedFile, onFileSelect, on
     setExpandedTypes((prev) => ({ ...prev, [type]: !prev[type] }));
   }
 
-  const grouped = data ? groupFilesByType(data.files) : {};
+  const grouped = data ? groupFilesByType(data) : {};
   const sortedTypes = Object.keys(grouped).sort();
 
   return (
@@ -60,7 +60,7 @@ export default function TreeView({ data, loading, selectedFile, onFileSelect, on
                         onClick={() => onFileSelect(file)}
                         title={file.name}
                       >
-                        <span className="tree-item-name">{file.target_name || file.name}</span>
+                        <span className="tree-item-name">{file.file_name || file.target_name || file.name}</span>
                         {file.action && file.action !== "INSERT_OR_UPDATE" && (
                           <span className="tree-item-action">{file.action}</span>
                         )}
