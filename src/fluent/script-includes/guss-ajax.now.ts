@@ -41,7 +41,7 @@ GussAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         }
 
         // Collect unique types (folders) in order
-        var au = new ArrayUtil();
+        var au = new global.ArrayUtil();
         var folderTypes = [];
         var typeGr = new GlideRecord('sys_update_xml');
         typeGr.addEncodedQuery('update_set=' + updateSetId);
