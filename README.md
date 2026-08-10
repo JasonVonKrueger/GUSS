@@ -17,6 +17,16 @@ GUSS is a ServiceNow UI page that helps developers browse and work with update-s
 - Artifact menu options come from a `sys_properties` record so they can be changed without editing the page
 - The page is tuned for global, in-progress update sets that are not part of batch sets
 
+## Screenshots
+
+![GUSS v2.0](docs/v2-0.png)
+
+![GUSS v2.1](docs/v2-1.png)
+
+![GUSS v2.2](docs/v2-2.png)
+
+![GUSS v2.4](docs/v2-4.png)
+
 ## Current status
 
 The app is in beta.
