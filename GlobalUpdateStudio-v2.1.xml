@@ -1,0 +1,2611 @@
+<?xml version="1.0" encoding="UTF-8"?><unload unload_date="2026-08-29 13:40:23">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description>Release notes:
+
+* moved css back into the ui page
+* added selectable update sets
+* added ability to add artifact types</description>
+<inserted/>
+<name>GlobalUpdateStudio-v2.1</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>6f37ba7c834fc75066b576d6feaad35b</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-29 13:40:22</sys_created_on>
+<sys_id>5d18befc834fc75066b576d6feaad3a8</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-29 13:40:22</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_f89b44a683ea47d066b576d6feaad34a</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>true</active><admin_overrides>true</admin_overrides><advanced>false</advanced><applies_to/><condition/><controlled_by_refs/><decision_type>allow</decision_type><description/><local_or_existing>Existing</local_or_existing><name>GlobalUpdateSetStudioAJAX</name><operation display_value="execute">execute</operation><script/><security_attribute/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-09 15:04:39</sys_created_on><sys_id>f89b44a683ea47d066b576d6feaad34a</sys_id><sys_mod_count>0</sys_mod_count><sys_name>GlobalUpdateSetStudioAJAX</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_security_acl_f89b44a683ea47d066b576d6feaad34a</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-09 15:04:39</sys_updated_on><type display_value="client_callable_script_include">client_callable_script_include</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>102573232</payload_hash>
+<remote_update_set display_value="GlobalUpdateStudio-v2.1">5d18befc834fc75066b576d6feaad3a8</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-29 13:40:22</sys_created_on>
+<sys_id>1118b630838fc75066b576d6feaad372</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19fe70df6020000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-29 13:40:22</sys_updated_on>
+<table>GlobalUpdateSetStudioAJAX</table>
+<target_name>GlobalUpdateSetStudioAJAX</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>309b44a65fea47d0bcf723417bfef853</update_guid>
+<update_guid_history>309b44a65fea47d0bcf723417bfef853:102573232</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>content_css_508f6ce683a287d066b576d6feaad381</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="content_css"><content_css action="DELETE"><name>global_update_set_studio</name><style>    :root {&#13;
+      --bg: #111827;&#13;
+      --panel: #1f2937;&#13;
+      --panel-2: #0f172a;&#13;
+      --text: #e5e7eb;&#13;
+      --muted: #9ca3af;&#13;
+      --border: #374151;&#13;
+      --hover: #243244;&#13;
+      --selected: #1e3a5f;&#13;
+      --warning-bg: #3f2a12;&#13;
+      --warning-border: #7c4a13;&#13;
+      --warning-text: #fcd9a3;&#13;
+    }&#13;
+&#13;
+    * { box-sizing: border-box; }&#13;
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; font-family: Inter, Arial, sans-serif; background: var(--bg); color: var(--text); }&#13;
+&#13;
+    .guss-app { display: grid; grid-template-columns: var(--guss-sidebar-width, 330px) 6px 1fr; height: 100vh; }&#13;
+    .guss-sidebar { border-right: 1px solid var(--border); background: var(--panel-2); overflow: auto; position: relative; }&#13;
+    .guss-resizer { background: #1f2937; border-right: 1px solid var(--border); cursor: ew-resize; position: relative; }&#13;
+    .guss-resizer:hover { background: #334155; }&#13;
+    .guss-resizer::after { content: ''; position: absolute; left: 2px; top: 50%; width: 2px; height: 48px; transform: translateY(-50%); background: rgba(148,163,184,0.75); border-radius: 1px; }&#13;
+    .guss-sidebar-head { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; padding: 12px 12px 8px; position: sticky; top: 0; background: var(--panel-2); z-index: 5; }&#13;
+    .guss-add-btn { width: 30px; height: 30px; border-radius: 8px; border: 2px solid rgba(255,255,255,0.25); background: rgba(255,255,255,0.12); color: #ffffff; font-size: 18px; line-height: 1; font-weight: 600; cursor: pointer; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08); }&#13;
+    .guss-add-btn:hover { background: rgba(255,255,255,0.18); }&#13;
+    .guss-add-menu { position: absolute; top: 62px; right: 12px; width: 290px; background: #ffffff; color: #334155; border-radius: 12px; box-shadow: 0 18px 40px rgba(15, 23, 42, 0.28); border: 1px solid #d9e2ec; overflow: hidden; z-index: 20; }&#13;
+    .guss-add-menu-title { padding: 12px 16px 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #94a3b8; text-transform: uppercase; border-bottom: 1px solid #e5e7eb; }&#13;
+    .guss-add-menu-item { display:flex; align-items:center; gap:8px; width:100%; border:0; background:#ffffff; color:#334155; padding: 8px 16px; font-size: 13px; text-align:left; cursor:pointer; }&#13;
+    .guss-add-menu-item:hover { background:#f8fafc; }&#13;
+    .guss-add-menu-icon { width: 20px; text-align:center; font-size: 18px; line-height: 1; }&#13;
+    .guss-main { display: grid; grid-template-rows: 48px 1fr; min-width: 0; min-height: 0; }&#13;
+    .guss-topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 14px; border-bottom: 1px solid var(--border); background: var(--panel); }&#13;
+    .guss-title { font-weight: 600; letter-spacing: 0.2px; }&#13;
+    .guss-topbar-actions { display: flex; align-items: center; gap: 8px; }&#13;
+    .guss-meta { color: var(--muted); font-size: 12px; white-space: nowrap; }&#13;
+    .guss-btn { border: 1px solid var(--border); background: #0b1220; color: var(--text); border-radius: 6px; padding: 6px 10px; font-size: 12px; cursor: pointer; }&#13;
+    .guss-btn:hover { background: #172033; }&#13;
+&#13;
+    .guss-workspace { display: grid; grid-template-rows: 1fr; min-height: 0; overflow: hidden; }&#13;
+    .guss-tabs {&#13;
+      display: flex;&#13;
+      align-items: flex-end;&#13;
+      gap: 2px;&#13;
+      padding: 0;&#13;
+      border-bottom: 1px solid #bcc7d5;&#13;
+      background: #dde4ec;&#13;
+      overflow-x: auto;&#13;
+    }&#13;
+&#13;
+    .guss-tab {&#13;
+      display: inline-flex;&#13;
+      align-items: center;&#13;
+      gap: 8px;&#13;
+      margin-top: 0;&#13;
+      padding: 16px 14px 13px;&#13;
+      border: 1px solid transparent;&#13;
+      border-bottom: none;&#13;
+      border-top-left-radius: 14px;&#13;
+      border-top-right-radius: 14px;&#13;
+      background: #d5dde7;&#13;
+      color: #5b6f87;&#13;
+      cursor: pointer;&#13;
+      white-space: nowrap;&#13;
+      font-size: 12px;&#13;
+      line-height: 1;&#13;
+      position: relative;&#13;
+      top: -1px;&#13;
+    }&#13;
+&#13;
+    .guss-tab.active {&#13;
+      background: #ffffff;&#13;
+      color: #0f4f79;&#13;
+      border-color: #b8c5d4;&#13;
+      box-shadow: inset 0 3px 0 #1ea6ff;&#13;
+      font-weight: 600;&#13;
+    }&#13;
+&#13;
+    .guss-tab-label { max-width: 230px; overflow: hidden; text-overflow: ellipsis; }&#13;
+    .guss-tab-close { color: #8a99ac; font-weight: 600; font-size: 22px; line-height: 12px; margin-left: 2px; }&#13;
+&#13;
+    .guss-viewer { min-height: 0; overflow: hidden; }&#13;
+    .guss-iframe { width: 100%; height: 100%; border: 0; background: #fff; }&#13;
+    .guss-empty { height: 100%; padding: 16px; overflow: auto; }&#13;
+    .guss-empty-intro { text-align: center; }&#13;
+    .guss-empty-title { font-size: 56px; font-weight: 700; line-height: 1; color: #e5e7eb; letter-spacing: 1px; }&#13;
+    .guss-empty-subtitle { margin-top: 12px; font-size: 20px; color: #9ca3af; }&#13;
+    .guss-empty-divider { width: 220px; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent); margin: 16px auto 0; }&#13;
+    .guss-empty-meta { margin: 16px auto 0; display: grid; grid-template-columns: 150px minmax(280px, 1fr); gap: 12px 16px; align-items: center; justify-content: center; width: min(100%, 920px); max-width: 920px; }&#13;
+    .guss-empty-label { font-size: 18px; color: #cbd5e1; text-align: right; white-space: nowrap; }&#13;
+    .guss-empty-value { font-size: 18px; color: #cbd5e1; text-align: left; }&#13;
+.guss-empty-note { display: block; width: min(100%, 600px); margin: 20px auto 0; padding: 12px 20px; border-radius: 10px; border: 1px solid rgba(20, 184, 166, 0.45); background: rgba(13, 148, 136, 0.18); color: #99f6e4; font-size: 14px; font-style: italic; line-height: 1.5; text-align: center; }&#13;
+    .guss-empty-select { width: 100%; padding: 9px 14px; border-radius: 12px; border: 1px solid #94a3b8; background: linear-gradient(180deg, #ffffff 0%, #eef3f8 100%); color: #0f172a; font-size: 16px; font-weight: 500; box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.95); }&#13;
+    .guss-empty-select:focus { outline: none; border-color: #60a5fa; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25), 0 8px 20px rgba(15, 23, 42, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.95); }&#13;
+    .guss-empty-select:disabled { opacity: 0.7; cursor: default; }&#13;
+    .guss-empty-action-cell { width: min(100%, 920px); max-width: 920px; margin: 12px auto 0; display: flex; justify-content: flex-end; }&#13;
+    .guss-empty-action { padding: 8px 12px; border: 1px solid #60a5fa; border-radius: 10px; background: linear-gradient(180deg, #dbeafe 0%, #bfdbfe 100%); color: #0f172a; font-size: 13px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 10px rgba(15, 23, 42, 0.12); }&#13;
+    .guss-empty-action:hover { background: linear-gradient(180deg, #bfdbfe 0%, #93c5fd 100%); }&#13;
+    .guss-loading-wrap { height: 100%; display: flex; align-items: center; justify-content: center; }&#13;
+    .guss-loading { display: flex; flex-direction: column; align-items: center; gap: 14px; color: #cbd5e1; }&#13;
+    .guss-spinner { width: 42px; height: 42px; border-radius: 50%; border: 4px solid rgba(148, 163, 184, 0.28); border-top-color: #93c5fd; animation: guss-spin 0.9s linear infinite; }&#13;
+    .guss-loading-text { font-size: 14px; letter-spacing: 0.03em; color: #94a3b8; }&#13;
+    @keyframes guss-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }&#13;
+    .guss-panel { background: #0b1220; border: 1px solid var(--border); border-radius: 8px; padding: 14px; }&#13;
+    .guss-muted { color: var(--muted); }&#13;
+    .guss-notice { margin: 8px 12px 0; border: 1px solid var(--warning-border); background: var(--warning-bg); color: var(--warning-text); border-radius: 6px; padding: 8px 10px; font-size: 12px; display: none; }&#13;
+&#13;
+    .guss-section-title { padding: 12px 12px 8px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }&#13;
+    .guss-tree { list-style: none; margin: 0; padding: 0 8px 16px; }&#13;
+    .guss-node { margin: 1px 0; }&#13;
+    .guss-node-row { display: flex; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 6px; cursor: pointer; user-select: none; }&#13;
+    .guss-node-row:hover { background: var(--hover); }&#13;
+    .guss-node-row.guss-selected { background: var(--selected); }&#13;
+    .guss-caret { width: 10px; color: var(--muted); flex: 0 0 10px; text-align: center; }&#13;
+    .guss-name { flex: 1; font-size: 12px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }&#13;
+    .guss-children { list-style: none; margin: 0; padding: 0 0 0 22px; }&#13;
+    .guss-file-icon { color: #93c5fd; }&#13;
+    .guss-folder-icon { color: #fbbf24; }&#13;
+&#13;
+&#13;
+&#13;
+&#13;
+&#13;
+</style><sys_class_name>content_css</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-09 17:42:30</sys_created_on><sys_id>508f6ce683a287d066b576d6feaad381</sys_id><sys_mod_count>13</sys_mod_count><sys_name>global_update_set_studio</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>content_css_508f6ce683a287d066b576d6feaad381</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-22 13:39:56</sys_updated_on><type>local</type><url/></content_css></record_update>]]></payload>
+<payload_hash>-822230349</payload_hash>
+<remote_update_set display_value="GlobalUpdateStudio-v2.1">5d18befc834fc75066b576d6feaad3a8</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-29 13:40:22</sys_created_on>
+<sys_id>1518befc834fc75066b576d6feaad3a9</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>1a03418e44e0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-29 13:40:22</sys_updated_on>
+<table/>
+<target_name>global_update_set_studio</target_name>
+<type>Style Sheet</type>
+<update_domain>global</update_domain>
+<update_guid>734e4597b3b2c310b406c6e3c8c1f0f6</update_guid>
+<update_guid_history>734e4597b3b2c310b406c6e3c8c1f0f6:-822230349,7ad4fea2abb6c710102d1b394e7ad07c:-1358117185,fcb4f6a2e1b6c7108c127ddcc49fa3aa:500991988,4634fe2288b6c7104fb721dc11cfc452:-104846457,38a332ae5676c7108a99148891f1b42d:752644163,6fcce026a6fa4710a245109cbc4e17de:1902005995,d27c682203fa4710662ab8819c366817:-1730281165,2ab6ac2283ba471010f1e972bbec605e:1902005995,c325acea2e7a471071c033d7e9b782b4:-1156060965,155791f6aa2e4bd0bae6e5abd4f3da2c:1902005995,3d669d36b22e4bd065675dde50c5c319:666031312,710615f2a02e4bd0a5119292736d071f:1833224930,14c519b21e2e4bd0f6a0ff379dbfcdaa:-1462187569,36359572612e4bd0a02a5ed3216459df:-1419304984,c7a3593ea9ea4bd02c1d9d82901e83f1:980615978,d9b119b6c2ea4bd029b04e3f733f8cbf:-1641614306,e1b0d5f2f0ea4bd07beee64cfc2f504e:802946822,53efe06a24a287d09a5d5bf3387d2d07:-589266141,9dbf6ce678a287d0d9fc4f581563b18a:1365274051</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_app_module_c9f2c26e83a2c7d066b576d6feaad347</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module"><sys_app_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="GUSS">fcf2c26e83a2c7d066b576d6feaad314</application><assessment/><device_type/><filter/><hint/><homepage/><image/><link_type>DIRECT</link_type><map_page/><mobile_title>Update Set Studio</mobile_title><mobile_view_name>Mobile</mobile_view_name><name/><order>100</order><override_menu_roles>false</override_menu_roles><query>/GUSS.do</query><report/><require_confirmation>true</require_confirmation><roles/><sys_class_name>sys_app_module</sys_class_name><sys_created_by>svc.spie.mcpserver</sys_created_by><sys_created_on>2026-08-09 23:46:13</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>c9f2c26e83a2c7d066b576d6feaad347</sys_id><sys_mod_count>2</sys_mod_count><sys_name>Update Set Studio</sys_name><sys_overrides/><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_app_module_c9f2c26e83a2c7d066b576d6feaad347</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-10 00:00:21</sys_updated_on><timeline_page/><title>Update Set Studio</title><uncancelable>false</uncancelable><view_name/><window_name/></sys_app_module></record_update>]]></payload>
+<payload_hash>-841468832</payload_hash>
+<remote_update_set display_value="GlobalUpdateStudio-v2.1">5d18befc834fc75066b576d6feaad3a8</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-29 13:40:22</sys_created_on>
+<sys_id>1d18befc834fc75066b576d6feaad3aa</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19fe8f868140000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-29 13:40:22</sys_updated_on>
+<table/>
+<target_name>Update Set Studio</target_name>
+<type>Module</type>
+<update_domain>global</update_domain>
+<update_guid>803686e62be2c7d0dbb5150ef6f6c756</update_guid>
+<update_guid_history>803686e62be2c7d0dbb5150ef6f6c756:-841468832,cec50a6616e2c7d0c5ef400d2ffd7c82:1686806803,09f2c26e7fa2c7d0ffb23c6c253ab64a:-394325810</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_app_module_efe1387283664bd066b576d6feaad3cc</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module"><sys_app_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="GUSS">fcf2c26e83a2c7d066b576d6feaad314</application><assessment/><device_type/><filter/><hint/><homepage/><image/><link_type>DIRECT</link_type><map_page/><mobile_title>New File List</mobile_title><mobile_view_name>Mobile</mobile_view_name><name/><order>105</order><override_menu_roles>false</override_menu_roles><query>/nav_to.do?uri=sys_properties.do?sys_id=691e4eee8326c7d066b576d6feaad390</query><report/><require_confirmation>true</require_confirmation><roles/><sys_class_name>sys_app_module</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-10 12:32:32</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>efe1387283664bd066b576d6feaad3cc</sys_id><sys_mod_count>1</sys_mod_count><sys_name>New File List</sys_name><sys_overrides/><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_app_module_efe1387283664bd066b576d6feaad3cc</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-10 12:33:05</sys_updated_on><timeline_page/><title>New File List</title><uncancelable>false</uncancelable><view_name/><window_name/></sys_app_module></record_update>]]></payload>
+<payload_hash>2027346016</payload_hash>
+<remote_update_set display_value="GlobalUpdateStudio-v2.1">5d18befc834fc75066b576d6feaad3a8</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-29 13:40:22</sys_created_on>
+<sys_id>5118befc834fc75066b576d6feaad3ab</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19feba98cb10000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-29 13:40:22</sys_updated_on>
+<table/>
+<target_name>New File List</target_name>
+<type>Module</type>
+<update_domain>global</update_domain>
+<update_guid>1272b8f234664bd06450e78a0ca30dd9</update_guid>
+<update_guid_history>1272b8f234664bd06450e78a0ca30dd9:2027346016,925234f220664bd0053c834d239e6c08:354687820</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_role_349b44a683ea47d066b576d6feaad355</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-09 15:04:39</sys_created_on><sys_id>349b44a683ea47d066b576d6feaad355</sys_id><sys_mod_count>0</sys_mod_count><sys_name>GlobalUpdateSetStudioAJAX.admin</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_security_acl display_value="GlobalUpdateSetStudioAJAX">f89b44a683ea47d066b576d6feaad34a</sys_security_acl><sys_update_name>sys_security_acl_role_349b44a683ea47d066b576d6feaad355</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-09 15:04:39</sys_updated_on><sys_user_role display_value="admin" name="admin">2831a114c611228501d4ea6c309d626d</sys_user_role></sys_security_acl_role></record_update>]]></payload>
+<payload_hash>780420884</payload_hash>
+<remote_update_set display_value="GlobalUpdateStudio-v2.1">5d18befc834fc75066b576d6feaad3a8</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-29 13:40:22</sys_created_on>
+<sys_id>5518b630838fc75066b576d6feaad372</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19fe70df64e0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-29 13:40:22</sys_updated_on>
+<table>GlobalUpdateSetStudioAJAX</table>
+<target_name>GlobalUpdateSetStudioAJAX.admin</target_name>
+<type>Access Roles</type>
+<update_domain>global</update_domain>
+<update_guid>389b44a6e4ea47d011606ae54ba99ecb</update_guid>
+<update_guid_history>389b44a6e4ea47d011606ae54ba99ecb:780420884</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_app_application_fcf2c26e83a2c7d066b576d6feaad314</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application"><sys_app_application action="INSERT_OR_UPDATE"><active>true</active><category/><description/><device_type>browser</device_type><hint>Global Update Set Studio</hint><name/><order>100</order><roles>admin</roles><sys_class_name>sys_app_application</sys_class_name><sys_created_by>svc.spie.mcpserver</sys_created_by><sys_created_on>2026-08-09 23:46:13</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>fcf2c26e83a2c7d066b576d6feaad314</sys_id><sys_mod_count>3</sys_mod_count><sys_name>GUSS</sys_name><sys_overrides/><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_app_application_fcf2c26e83a2c7d066b576d6feaad314</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-10 13:06:18</sys_updated_on><title>GUSS</title><view_name/></sys_app_application></record_update>]]></payload>
+<payload_hash>-790918979</payload_hash>
+<remote_update_set display_value="GlobalUpdateStudio-v2.1">5d18befc834fc75066b576d6feaad3a8</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-29 13:40:22</sys_created_on>
+<sys_id>9118befc834fc75066b576d6feaad3aa</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19febc7f7b70000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-29 13:40:22</sys_updated_on>
+<table/>
+<target_name>GUSS</target_name>
+<type>Application Menu</type>
+<update_domain>global</update_domain>
+<update_guid>091af03e8da64bd02ff91d672926a00b</update_guid>
+<update_guid_history>091af03e8da64bd02ff91d672926a00b:-790918979,00a9f4ba76a64bd0adb8217fee1fcc25:-1638313419,94358226dee2c7d06079be9787ccb6f9:-790918979,c5f2c26e58a2c7d09f598981e378b619:-493465977</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_properties_691e4eee8326c7d066b576d6feaad390</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties"><sys_properties action="INSERT_OR_UPDATE"><choices/><description>JSON array for GUSS Add New File menu entries. Each item: {"label": string, "icon": string, "tableName": string}.</description><ignore_cache>false</ignore_cache><is_private>false</is_private><name>global_update_set_studio.create_artifacts</name><read_roles/><suffix/><sys_class_name>sys_properties</sys_class_name><sys_created_by>svc.spie.mcpserver</sys_created_by><sys_created_on>2026-08-10 00:34:51</sys_created_on><sys_id>691e4eee8326c7d066b576d6feaad390</sys_id><sys_mod_count>5</sys_mod_count><sys_name>global_update_set_studio.create_artifacts</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_properties_691e4eee8326c7d066b576d6feaad390</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-10 12:31:50</sys_updated_on><type>string</type><value>[&#13;
+  {&#13;
+    "label": "Business Rule",&#13;
+    "icon": "⚙️",&#13;
+    "tableName": "sys_script"&#13;
+  },&#13;
+  {&#13;
+    "label": "Script Include",&#13;
+    "icon": "]]>📦<![CDATA[",&#13;
+    "tableName": "sys_script_include"&#13;
+  },&#13;
+  {&#13;
+    "label": "Client Script",&#13;
+    "icon": "]]>🖥<![CDATA[️",&#13;
+    "tableName": "sys_script_client"&#13;
+  },&#13;
+  {&#13;
+    "label": "UI Policy",&#13;
+    "icon": "]]>📋<![CDATA[",&#13;
+    "tableName": "sys_ui_policy"&#13;
+  },&#13;
+  {&#13;
+    "label": "UI Action",&#13;
+    "icon": "▶️",&#13;
+    "tableName": "sys_ui_action"&#13;
+  },&#13;
+  {&#13;
+    "label": "Scheduled Job",&#13;
+    "icon": "⏰",&#13;
+    "tableName": "sysauto_script"&#13;
+  },&#13;
+  {&#13;
+    "label": "Fix Script",&#13;
+    "icon": "]]>🔧<![CDATA[",&#13;
+    "tableName": "sys_script_fix"&#13;
+  },&#13;
+  {&#13;
+    "label": "UI Page",&#13;
+    "icon": "]]>📄<![CDATA[",&#13;
+    "tableName": "sys_ui_page"&#13;
+  },&#13;
+  {&#13;
+    "label": "REST Message",&#13;
+    "icon": "]]>🌐<![CDATA[",&#13;
+    "tableName": "sys_rest_message"&#13;
+  },&#13;
+  {&#13;
+    "label": "Table",&#13;
+    "icon": "]]>🗃<![CDATA[️",&#13;
+    "tableName": "sys_db_object"&#13;
+  }&#13;
+]</value><write_roles/></sys_properties><sys_translated_text action="delete_multiple" query="documentkey=691e4eee8326c7d066b576d6feaad390"/></record_update>]]></payload>
+<payload_hash>-1702594676</payload_hash>
+<remote_update_set display_value="GlobalUpdateStudio-v2.1">5d18befc834fc75066b576d6feaad3a8</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-29 13:40:22</sys_created_on>
+<sys_id>9518befc834fc75066b576d6feaad3ab</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19feba870480000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-29 13:40:22</sys_updated_on>
+<table/>
+<target_name>global_update_set_studio.create_artifacts</target_name>
+<type>System Property</type>
+<update_domain>global</update_domain>
+<update_guid>6c3278b232664bd05886aae3aa3bfa93</update_guid>
+<update_guid_history>6c3278b232664bd05886aae3aa3bfa93:-1702594676,1c81b8fe6e264bd01c3837681e185bec:-1802273160,6751fcbeeb264bd085ab8a7c94c73df1:-1702594676,d92116aa7566c7d02d3787418752482e:1598237628,6cd0de2a7266c7d03b6f3cb81f3b5f69:-289024502,ca1e8eee1e26c7d081096f086c4e22f9:-910468336</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_ui_page_6ec0bbb583a2cf9066b576d6feaad3be</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_page"&gt;&lt;sys_ui_page action="INSERT_OR_UPDATE"&gt;&lt;category&gt;general&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[// ── Server-provided context ─────────────────────────────────────────────────
+// The HTML field renders a JSON data island (#guss-context-data) via Jelly so
+// the server can hand off the current update set, session token, and the
+// create-artifacts property. Everything else lives here in Client Script.
+(function() {
+  var contextEl = document.getElementById('guss-context-data');
+  var parsed = {};
+  if (contextEl) {
+    try {
+      parsed = JSON.parse(contextEl.textContent || contextEl.innerText || '{}');
+    } 
+	catch(e) {
+      parsed = {};
+    }
+  }
+
+  window.GUSS_CONTEXT = {
+    updateSetId:         parsed.updateSetId || '',
+    userToken:           parsed.userToken || '',
+    createArtifactsJson: parsed.createArtifactsJson || ''
+  };
+})();
+
+(function() {
+  // ── DOM references ──────────────────────────────────────────────────────────
+  const appEl             = document.getElementById('guss-app');
+  const treeEl            = document.getElementById('guss-tree');
+  const metaEl            = document.getElementById('guss-meta');
+  const noticeEl          = document.getElementById('guss-notice');
+  const reloadBtn         = document.getElementById('guss-reload');
+  const tabsEl            = document.getElementById('guss-tabs');
+  const viewerEl          = document.getElementById('guss-viewer');
+  const workspaceEl       = document.querySelector('.guss-workspace');
+  const addBtn            = document.getElementById('guss-add-btn');
+  const addMenuEl         = document.getElementById('guss-add-menu');
+  const sidebarResizerEl  = document.getElementById('guss-sidebar-resizer');
+
+  // ── Application state ───────────────────────────────────────────────────────
+  let treeData                 = [];   // Parsed artifact tree nodes
+  let openTabs                 = [];   // Tabs currently open in the viewer
+  let activeTabKey             = '';   // Key of the currently visible tab
+  let currentUpdateSetId       = '';   // sys_id of selected update set
+  let currentUpdateSetName     = '';
+  let currentUpdateSetState    = '';
+  let currentContextUpdateSetId   = '';   // Update set that was active on load
+  let isLoadingEmptyState      = true; // True while initial data fetch is running
+  let availableUpdateSets      = [];   // All update sets fetched from server
+
+  // ── "Add New File" artifact menu config ────────────────────────────────────
+  // Loaded from sys_properties; falls back to hardcoded defaults.
+  const CREATE_ARTIFACTS_PROPERTY_NAME = 'global_update_set_studio.create_artifacts';
+  const DEFAULT_CREATE_ARTIFACTS = [
+    { label: 'Business Rule',  icon: '\u2699\ufe0f',   tableName: 'sys_script' },
+    { label: 'Script Include', icon: '\ud83d\udce6',   tableName: 'sys_script_include' },
+    { label: 'Client Script',  icon: '\ud83d\udda5\ufe0f', tableName: 'sys_script_client' },
+    { label: 'UI Policy',      icon: '\ud83d\udccb',   tableName: 'sys_ui_policy' },
+    { label: 'UI Action',      icon: '\u25b6\ufe0f',   tableName: 'sys_ui_action' },
+    { label: 'Scheduled Job',  icon: '\u23f0',         tableName: 'sysauto_script' },
+    { label: 'Fix Script',     icon: '\ud83d\udd27',   tableName: 'sys_script_fix' },
+    { label: 'UI Page',        icon: '\ud83d\udcc4',   tableName: 'sys_ui_page' },
+    { label: 'REST Message',   icon: '\ud83c\udf10',   tableName: 'sys_rest_message' },
+    { label: 'Table',          icon: '\ud83d\uddc3\ufe0f', tableName: 'sys_db_object' }
+  ];
+  let createArtifacts = DEFAULT_CREATE_ARTIFACTS.slice();
+
+  // ── Sidebar resize constants ────────────────────────────────────────────────
+  const SIDEBAR_DEFAULT_WIDTH = 330;
+  const SIDEBAR_MIN_WIDTH     = SIDEBAR_DEFAULT_WIDTH - 50;
+  const SIDEBAR_MAX_WIDTH     = SIDEBAR_DEFAULT_WIDTH + 50;
+
+  // ── Utility: inline notice bar above the tree ───────────────────────────────
+  function setNotice(text) {
+    if (!text) {
+      noticeEl.style.display = 'none';
+      noticeEl.textContent = '';
+      return;
+    }
+    noticeEl.style.display = 'block';
+    noticeEl.textContent = text;
+  }
+
+  // ── Sidebar resize: clamp and apply width via CSS custom property ───────────
+  function setSidebarWidth(widthPx) {
+    if (!appEl) return;
+    const bounded = Math.max(SIDEBAR_MIN_WIDTH, Math.min(SIDEBAR_MAX_WIDTH, widthPx));
+    appEl.style.setProperty('--guss-sidebar-width', bounded + 'px');
+  }
+
+  // Wire the drag handle so the sidebar can be resized left/right
+  function initSidebarResizer() {
+    if (!sidebarResizerEl || !appEl) return;
+
+    let dragging  = false;
+    let startX    = 0;
+    let startWidth = SIDEBAR_DEFAULT_WIDTH;
+
+    function onMouseMove(event) {
+      if (!dragging) return;
+      setSidebarWidth(startWidth + (event.clientX - startX));
+    }
+
+    function onMouseUp() {
+      if (!dragging) return;
+      dragging = false;
+      document.body.style.cursor = '';
+      document.body.style.userSelect = '';
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
+    }
+
+    sidebarResizerEl.addEventListener('mousedown', function(event) {
+      event.preventDefault();
+      dragging = true;
+      startX = event.clientX;
+      const rawWidth = getComputedStyle(appEl).getPropertyValue('--guss-sidebar-width').trim();
+      const parsed = parseInt(rawWidth || String(SIDEBAR_DEFAULT_WIDTH), 10);
+      startWidth = Number.isFinite(parsed) ? parsed : SIDEBAR_DEFAULT_WIDTH;
+      document.body.style.cursor = 'ew-resize';
+      document.body.style.userSelect = 'none';
+      document.addEventListener('mousemove', onMouseMove);
+      document.addEventListener('mouseup', onMouseUp);
+    });
+  }
+
+  // ── Utility: HTML-escape a value for safe interpolation into innerHTML ───────
+  function esc(value) {
+    return String(value || '').replace(/[&amp;&lt;&gt;"']/g, function(ch) {
+      return ({ '&amp;': '&amp;amp;', '&lt;': '&amp;lt;', '&gt;': '&amp;gt;', '"': '&amp;quot;', "'": '&amp;#39;' })[ch];
+    });
+  }
+
+  // Returns a folder or file icon span for a tree node
+  function iconFor(node) {
+    return node.kind === 'folder'
+      ? '&lt;span class="guss-folder-icon"&gt;\ud83d\udcc1&lt;/span&gt;'
+      : '&lt;span class="guss-file-icon"&gt;\ud83d\udcc4&lt;/span&gt;';
+  }
+
+  // Remove the .guss-selected highlight from all tree rows
+  function clearSelected() {
+    document.querySelectorAll('.guss-node-row.guss-selected').forEach(function(el) {
+      el.classList.remove('guss-selected');
+    });
+  }
+
+  // ── Record URL helpers ──────────────────────────────────────────────────────
+
+  // Split a sys_update_xml.name (e.g. "sys_script_abc123...") into table + sys_id
+  function parseTargetFromName(nameValue) {
+    const raw = String(nameValue || '').trim();
+    const idx = raw.lastIndexOf('_');
+    if (idx &lt;= 0 || idx &gt;= raw.length - 1) return { tableName: '', targetSysId: '' };
+    const suffix = raw.substring(idx + 1);
+    if (!/^[0-9a-fA-F]{32}$/.test(suffix)) return { tableName: '', targetSysId: '' };
+    return { tableName: raw.substring(0, idx), targetSysId: suffix };
+  }
+
+  // URL to open an existing record in a frameless view
+  function buildRecordUrl(tableName, targetSysId) {
+    if (!tableName || !targetSysId) return '';
+    return '/' + tableName + '.do?sys_id=' + encodeURIComponent(targetSysId) + '&amp;sysparm_stack=no';
+  }
+
+  // URL to open a new (blank) record form
+  function buildNewRecordUrl(tableName) {
+    if (!tableName) return '';
+    return '/' + tableName + '.do?sys_id=-1&amp;sysparm_stack=no';
+  }
+
+  // ── "Add New File" dropdown menu ────────────────────────────────────────────
+
+  function setAddMenuOpen(isOpen) {
+    addMenuEl.style.display = isOpen ? 'block' : 'none';
+  }
+
+  // Open a tab for creating a brand-new artifact of the chosen type
+  function openCreateArtifactTab(item) {
+    const key = 'new:' + item.tableName;
+    const existing = openTabs.find(function(t) { return t.key === key; });
+
+    if (!existing) {
+      openTabs.push({ key: key, label: item.label, url: buildNewRecordUrl(item.tableName) });
+    }
+
+    activeTabKey = key;
+    renderTabs();
+    setAddMenuOpen(false);
+  }
+
+  // Build the "Add New File" dropdown from the createArtifacts config array
+  function renderAddMenu() {
+    addMenuEl.innerHTML = '';
+    const title = document.createElement('div');
+    title.className = 'guss-add-menu-title';
+    title.textContent = 'Add New File';
+    addMenuEl.appendChild(title);
+
+    if (!createArtifacts.length) {
+      const empty = document.createElement('div');
+      empty.className = 'guss-add-menu-item';
+      empty.textContent = 'No artifact types configured';
+      addMenuEl.appendChild(empty);
+      return;
+    }
+
+    createArtifacts.forEach(function(item) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'guss-add-menu-item';
+      button.innerHTML = '&lt;span class="guss-add-menu-icon"&gt;' + esc(item.icon || '\ud83d\udcc4') + '&lt;/span&gt;&lt;span&gt;' + esc(item.label) + '&lt;/span&gt;';
+      button.addEventListener('click', function(event) {
+        event.stopPropagation();
+        openCreateArtifactTab(item);
+      });
+      addMenuEl.appendChild(button);
+    });
+  }
+
+  // ── Application / update-set helpers ───────────────────────────────────────
+
+  // Normalise an app key for case-insensitive comparison ("Global" vs "global")
+
+  // Show/hide the "Make current set" button depending on whether the selected
+  // update set differs from the context that was active on page load
+  function setMakeCurrentButtonVisibility() {
+    const makeCurrentBtn = document.getElementById('guss-empty-make-current');
+    if (!makeCurrentBtn) return;
+
+    if (!currentContextUpdateSetId) {
+      makeCurrentBtn.style.display = 'none';
+      return;
+    }
+
+    const isCurrentSelection = currentUpdateSetId === currentContextUpdateSetId;
+    makeCurrentBtn.style.display = isCurrentSelection ? 'none' : 'inline-block';
+  }
+
+  // ── Empty / landing state controls ─────────────────────────────────────────
+  // Wires up the Update Set dropdown rendered in the empty state view (no tabs open).
+  function renderEmptyStateControls() {
+    const updateSetSelectEl   = document.getElementById('guss-empty-update-set');
+    const stateEl             = document.getElementById('guss-empty-state-value');
+    if (!updateSetSelectEl) return;
+
+    // Populate the update-set &lt;select&gt; and pre-select the current update set
+    function populateUpdateSetSelect(preferredUpdateSetId) {
+      updateSetSelectEl.innerHTML = '';
+
+      if (!availableUpdateSets.length) {
+        const option = document.createElement('option');
+        option.value = '';
+        option.textContent = 'No update sets available';
+        updateSetSelectEl.appendChild(option);
+        updateSetSelectEl.disabled = true;
+        currentUpdateSetId    = '';
+        currentUpdateSetName  = '';
+        currentUpdateSetState = '';
+        if (stateEl) stateEl.textContent = 'Unknown';
+        setMakeCurrentButtonVisibility();
+        return;
+      }
+
+      updateSetSelectEl.disabled = false;
+      availableUpdateSets.forEach(function(updateSet) {
+        const option = document.createElement('option');
+        option.value = updateSet.sysId;
+        option.textContent = updateSet.name;
+        updateSetSelectEl.appendChild(option);
+      });
+
+      // Keep preferred selection if it exists in the list
+      let selectedId = preferredUpdateSetId;
+      if (!selectedId || !availableUpdateSets.some(function(updateSet) { return updateSet.sysId === selectedId; })) {
+        selectedId = availableUpdateSets[0].sysId;
+      }
+      updateSetSelectEl.value = selectedId;
+
+      const selectedUpdateSet = availableUpdateSets.find(function(updateSet) { return updateSet.sysId === selectedId; }) || availableUpdateSets[0];
+      currentUpdateSetId    = selectedUpdateSet.sysId;
+      currentUpdateSetName  = selectedUpdateSet.name;
+      currentUpdateSetState = selectedUpdateSet.state || 'Unknown';
+      if (stateEl) stateEl.textContent = currentUpdateSetState || 'Unknown';
+      setMakeCurrentButtonVisibility();
+    }
+
+    // Wire up the update-set select
+    updateSetSelectEl.addEventListener('change', function() {
+      const selectedUpdateSet = availableUpdateSets.find(function(updateSet) {
+        return updateSet.sysId === updateSetSelectEl.value;
+      });
+
+      if (!selectedUpdateSet) return;
+
+      currentUpdateSetId    = selectedUpdateSet.sysId;
+      currentUpdateSetName  = selectedUpdateSet.name;
+      currentUpdateSetState = selectedUpdateSet.state || 'Unknown';
+      if (stateEl) stateEl.textContent = currentUpdateSetState || 'Unknown';
+      setMakeCurrentButtonVisibility();
+    });
+
+    populateUpdateSetSelect(currentUpdateSetId);
+    setMakeCurrentButtonVisibility();
+  }
+
+  // ── Tab bar and viewer ──────────────────────────────────────────────────────
+  // Renders the tab strip and the active tab's content (iframe or inline HTML).
+  // Also handles the empty/loading state when no tabs are open.
+  function renderTabs() {
+    tabsEl.innerHTML = '';
+
+    if (!openTabs.length) {
+      tabsEl.style.display = 'none';
+      if (workspaceEl) workspaceEl.style.gridTemplateRows = '1fr';
+
+      // Show spinner while the initial data fetch is still running
+      if (isLoadingEmptyState) {
+        viewerEl.innerHTML = '&lt;div class="guss-empty guss-loading-wrap"&gt;&lt;div class="guss-loading"&gt;&lt;div class="guss-spinner" aria-hidden="true"&gt;&lt;/div&gt;&lt;div class="guss-loading-text"&gt;Loading update set workspace...&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;';
+        return;
+      }
+
+      // Landing state: GUSS branding + update-set dropdown
+      viewerEl.innerHTML =
+        '&lt;div class="guss-empty" style="display:flex; align-items:center; justify-content:center;"&gt;' +
+          '&lt;div class="guss-empty-intro"&gt;' +
+            '&lt;div class="guss-empty-title"&gt;GUSS&lt;/div&gt;' +
+            '&lt;div class="guss-empty-subtitle"&gt;Global Update Set Studio&lt;/div&gt;' +
+            '&lt;div class="guss-empty-divider"&gt;&lt;/div&gt;' +
+            '&lt;div class="guss-empty-meta"&gt;' +
+              '&lt;div class="guss-empty-label" title="Only showing open global update sets"&gt;Update set:&lt;/div&gt;' +
+              '&lt;div class="guss-empty-select-wrap"&gt;' +
+                '&lt;select id="guss-empty-update-set" class="guss-empty-select" aria-label="Choose update set"&gt;&lt;/select&gt;' +
+              '&lt;/div&gt;' +
+            '&lt;/div&gt;' +
+            '&lt;div class="guss-empty-action-cell"&gt;' +
+              '&lt;button id="guss-empty-make-current" class="guss-empty-action" type="button"&gt;Make current set&lt;/button&gt;' +
+            '&lt;/div&gt;' +
+          '&lt;/div&gt;' +
+        '&lt;/div&gt;';
+      renderEmptyStateControls();
+      return;
+    }
+
+    tabsEl.style.display = 'flex';
+    if (workspaceEl) workspaceEl.style.gridTemplateRows = '52px 1fr';
+
+    // Build one tab element per open tab
+    openTabs.forEach(function(tab) {
+      const tabEl = document.createElement('div');
+      tabEl.className = 'guss-tab' + (tab.key === activeTabKey ? ' active' : '');
+      tabEl.innerHTML =
+        '&lt;span class="guss-tab-label" title="' + esc(tab.label) + '"&gt;' + esc(tab.label) + '&lt;/span&gt;' +
+        '&lt;span class="guss-tab-close"&gt;\u00d7&lt;/span&gt;';
+
+      tabEl.addEventListener('click', function(event) {
+        const closeClicked = event.target &amp;&amp; event.target.classList &amp;&amp; event.target.classList.contains('guss-tab-close');
+        if (closeClicked) {
+          event.stopPropagation();
+          closeTab(tab.key);
+          return;
+        }
+        activeTabKey = tab.key;
+        renderTabs();
+      });
+
+      tabsEl.appendChild(tabEl);
+    });
+
+    // Ensure activeTabKey points at a real tab
+    const active = openTabs.find(function(t) { return t.key === activeTabKey; }) || openTabs[0];
+    activeTabKey = active.key;
+
+    // Render the active tab's content area
+    if (active.url) {
+      viewerEl.innerHTML = '&lt;iframe class="guss-iframe" src="' + esc(active.url) + '"&gt;&lt;/iframe&gt;';
+    } 
+	else if (active.html) {
+      viewerEl.innerHTML = active.html;
+    } 
+	else {
+      viewerEl.innerHTML =
+        '&lt;div class="guss-empty"&gt;&lt;div class="guss-panel"&gt;' +
+          '&lt;div style="font-weight:600; margin-bottom:10px;"&gt;' + esc(active.label) + '&lt;/div&gt;' +
+          '&lt;pre class="guss-muted" style="white-space:pre-wrap; margin:0;"&gt;Unable to derive target table/sys_id from this update XML record.&lt;/pre&gt;' +
+        '&lt;/div&gt;&lt;/div&gt;';
+    }
+  }
+
+  // ── Tab management ──────────────────────────────────────────────────────────
+
+  // Open (or switch to) a tab for an artifact file node
+  function openArtifactTab(node) {
+    const keyBase = node.tableName &amp;&amp; node.targetSysId
+      ? (node.tableName + ':' + node.targetSysId)
+      : ('update_xml:' + node.updateXmlSysId);
+    const existing = openTabs.find(function(t) { return t.key === keyBase; });
+    if (!existing) {
+      openTabs.push({ key: keyBase, label: node.name, url: buildRecordUrl(node.tableName, node.targetSysId) });
+    }
+
+    activeTabKey = keyBase;
+    renderTabs();
+  }
+
+  window.GUSS_OPEN_RECORD_TAB = function(record) {
+    if (!record || !record.tableName || !record.targetSysId) return;
+    openArtifactTab({
+      tableName: String(record.tableName),
+      targetSysId: String(record.targetSysId),
+      name: String(record.name || record.label || record.targetSysId)
+    });
+  };
+
+  // Open (or refresh) a tab that shows a folder's artifact list
+  function openFolderTab(node) {
+    const folderTypeName = String(node.typeName || node.name || 'Artifact Type');
+    const keyBase = 'folder:' + folderTypeName;
+    const existing = openTabs.find(function(t) { return t.key === keyBase; });
+    const folderTab = {
+      key:   keyBase,
+      label: folderTypeName,
+      url:   '',
+      html:  buildFolderDetailsHtml(node)
+    };
+
+    if (existing) {
+      // Refresh in place so stale folder data is always updated on re-click
+      existing.label = folderTab.label;
+      existing.url   = '';
+      existing.html  = folderTab.html;
+    } 
+	else {
+      openTabs.push(folderTab);
+    }
+
+    activeTabKey = keyBase;
+    renderTabs();
+  }
+
+  // Close a tab by key; activate the most-recently-opened remaining tab
+  function closeTab(tabKey) {
+    const idx = openTabs.findIndex(function(t) { return t.key === tabKey; });
+    if (idx &lt; 0) return;
+    openTabs.splice(idx, 1);
+    if (activeTabKey === tabKey) {
+      activeTabKey = openTabs.length ? openTabs[openTabs.length - 1].key : '';
+    }
+    renderTabs();
+  }
+
+  // ── Folder detail panel ─────────────────────────────────────────────────────
+  // Builds the inline HTML shown when a folder (artifact type) tab is opened
+  function buildFolderDetailsHtml(node) {
+    const folderTitle = String(node.typeName || node.name || 'Artifact Type');
+    const children = Array.isArray(node.children) ? node.children : [];
+
+    const detailsList = children.map(function(child) {
+      const action = String(child.action || '').trim();
+      let actionLabel = '';
+      if (action) {
+        const normalizedAction = action.toUpperCase();
+        // INSERT_OR_UPDATE is the most common action; show a friendlier label
+        actionLabel = normalizedAction === 'INSERT_OR_UPDATE'
+          ? ' &lt;em style="color:#475569;"&gt;(New or modified file)&lt;/em&gt;'
+          : ' (' + esc(normalizedAction) + ')';
+      }
+      return '&lt;li style="margin:0 0 10px 0;"&gt;' + esc(child.name || 'Unnamed Artifact') + actionLabel + '&lt;/li&gt;';
+    }).join('');
+
+    const detailsBody = detailsList
+      ? '&lt;ul style="margin:0; padding-left:22px; color:#334155; font-size:14px; line-height:1.5;"&gt;' + detailsList + '&lt;/ul&gt;'
+      : '&lt;div style="color:#64748b; font-size:14px;"&gt;No files found for this type in the current update set.&lt;/div&gt;';
+
+    return '' +
+      '&lt;div class="guss-empty" style="padding:30px 36px; background:#ffffff;"&gt;' +
+        '&lt;div style="display:flex; align-items:center; gap:12px; color:#0f4f79;"&gt;' +
+          '&lt;span style="font-size:28px; line-height:1;"&gt;\ud83d\udcc1&lt;/span&gt;' +
+          '&lt;div style="font-size:28px; font-weight:700; line-height:1.1;"&gt;' + esc(folderTitle) + '&lt;/div&gt;' +
+        '&lt;/div&gt;' +
+        '&lt;div style="margin-top:16px; border:1px solid #bae6fd; background:#f0f9ff; border-radius:14px; padding:20px 24px;"&gt;' +
+          '&lt;div style="font-size:16px; font-weight:700; letter-spacing:0.05em; color:#0369a1; margin-bottom:12px;"&gt;DETAILS&lt;/div&gt;' +
+          detailsBody +
+        '&lt;/div&gt;' +
+      '&lt;/div&gt;';
+  }
+
+  // ── Tree rendering ──────────────────────────────────────────────────────────
+
+  // Recursively build a &lt;li&gt; element for a single tree node (folder or file)
+  function renderNode(node, parentPath) {
+    const li = document.createElement('li');
+    li.className = 'guss-node';
+
+    const row = document.createElement('div');
+    row.className = 'guss-node-row';
+    const path = parentPath ? (parentPath + '/' + node.name) : node.name;
+    row.dataset.path = path;
+
+    row.innerHTML =
+      '&lt;span class="guss-caret"&gt;' + (node.kind === 'folder' ? '\u25b8' : '') + '&lt;/span&gt;' +
+      iconFor(node) +
+      '&lt;span class="guss-name" title="' + esc(node.name) + '"&gt;' + esc(node.name) + '&lt;/span&gt;';
+
+    li.appendChild(row);
+
+    // Render child nodes inside a collapsible &lt;ul&gt;
+    let childrenEl = null;
+
+    if (node.children &amp;&amp; node.children.length) {
+      childrenEl = document.createElement('ul');
+      childrenEl.className = 'guss-children';
+      childrenEl.style.display = 'none';
+      node.children.forEach(function(child) {
+        childrenEl.appendChild(renderNode(child, path));
+      });
+      li.appendChild(childrenEl);
+    }
+
+    // Toggle open/closed state of a folder node
+    function setFolderOpen(isOpen) {
+      node.open = !!isOpen;
+      if (node.kind === 'folder') {
+        const caret = row.querySelector('.guss-caret');
+        if (caret) caret.textContent = node.open ? '\u25be' : '\u25b8';
+      }
+
+      if (childrenEl) childrenEl.style.display = node.open ? 'block' : 'none';
+    }
+
+    if (node.kind === 'folder') setFolderOpen(!!node.open);
+
+    // Clicking the caret toggles the folder without opening the tab
+    const caretEl = row.querySelector('.guss-caret');
+    if (node.kind === 'folder' &amp;&amp; caretEl) {
+      caretEl.addEventListener('click', function(event) {
+        event.stopPropagation();
+        setFolderOpen(!node.open);
+      });
+    }
+
+    // Clicking the row opens the appropriate tab (folder detail or artifact record)
+    row.addEventListener('click', function(event) {
+      event.stopPropagation();
+      clearSelected();
+      row.classList.add('guss-selected');
+
+      if (node.kind === 'folder') {
+        openFolderTab(node);
+        return;
+      }
+
+      openArtifactTab(node);
+    });
+
+    return li;
+  }
+
+  // Clear and re-render the entire sidebar tree from treeData
+  function renderTree() {
+    treeEl.innerHTML = '';
+    if (!treeData.length) {
+      const empty = document.createElement('li');
+      empty.className = 'guss-node';
+      empty.innerHTML = '&lt;div class="guss-node-row"&gt;&lt;span class="guss-name guss-muted"&gt;No artifacts found in current update set.&lt;/span&gt;&lt;/div&gt;';
+      treeEl.appendChild(empty);
+      return;
+    }
+
+    treeData.forEach(function(node) {
+      treeEl.appendChild(renderNode(node, ''));
+    });
+  }
+
+  // ── Data fetching ───────────────────────────────────────────────────────────
+
+  // Thin fetch wrapper that attaches the SN user token and parses JSON
+  async function fetchJson(url) {
+    const headers = { 'Accept': 'application/json', 'Content-Type': 'application/json' };
+    if (window.GUSS_CONTEXT.userToken) headers['X-UserToken'] = window.GUSS_CONTEXT.userToken;
+    const response = await fetch(url, { method: 'GET', headers: headers, credentials: 'same-origin' });
+    if (!response.ok) {
+      const text = await response.text();
+      throw new Error('HTTP ' + response.status + ' while reading ' + url + ': ' + text);
+    }
+    return response.json();
+  }
+
+  // Parse and validate the JSON array stored in the sys_properties artifact config.
+  // Falls back to DEFAULT_CREATE_ARTIFACTS if the value is missing or malformed.
+  function normalizeCreateArtifacts(configValue) {
+    if (!configValue) return DEFAULT_CREATE_ARTIFACTS.slice();
+
+    let parsed;
+    try {
+      parsed = JSON.parse(configValue);
+    } 
+	catch (error) {
+      return DEFAULT_CREATE_ARTIFACTS.slice();
+    }
+
+    if (!Array.isArray(parsed)) return DEFAULT_CREATE_ARTIFACTS.slice();
+
+    const normalized = parsed
+      .map(function(item) {
+        if (!item || typeof item !== 'object') return null;
+        const label     = String(item.label     || '').trim();
+        const tableName = String(item.tableName || '').trim();
+        const icon      = String(item.icon      || '').trim();
+        if (!label || !tableName) return null;
+        return { label: label, tableName: tableName, icon: icon || '\ud83d\udcc4' };
+      })
+      .filter(function(item) { return !!item; });
+
+    return normalized.length ? normalized : DEFAULT_CREATE_ARTIFACTS.slice();
+  }
+
+  // Fetch the artifact menu config from sys_properties
+  async function loadCreateArtifactsConfig() {
+    const query  = encodeURIComponent('name=' + CREATE_ARTIFACTS_PROPERTY_NAME + '^ORDERBYDESCsys_updated_on');
+    const fields = encodeURIComponent('value');
+    const url = '/api/now/table/sys_properties?sysparm_display_value=false&amp;sysparm_exclude_reference_link=true&amp;sysparm_query=' + query + '&amp;sysparm_fields=' + fields + '&amp;sysparm_limit=1';
+
+    try {
+      const data    = await fetchJson(url);
+      const records = Array.isArray(data.result) ? data.result : [];
+      const rawValue = records.length ? String(records[0].value || '') : '';
+      createArtifacts = normalizeCreateArtifacts(rawValue);
+    } 
+	catch (error) {
+      createArtifacts = DEFAULT_CREATE_ARTIFACTS.slice();
+    }
+  }
+
+  // Fetch name, state, and application for a single update set
+  async function loadUpdateSetInfo(updateSetId) {
+    const url = '/api/now/table/sys_update_set/' + encodeURIComponent(updateSetId) + '?sysparm_display_value=false&amp;sysparm_exclude_reference_link=true&amp;sysparm_fields=name,state,application';
+    const data = await fetchJson(url);
+    const result = data.result || {};
+    const applicationRef  = String(result.application || '').trim();
+    let applicationName   = applicationRef || 'Global';
+    let applicationScope  = 'Unknown';
+
+    // If the application field looks like a sys_id, resolve its display name
+    function looksLikeSysId(value) {
+      return /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$/.test(value) ||
+             /^[0-9a-fA-F]{32}$/.test(value);
+    }
+
+    if (looksLikeSysId(applicationRef)) {
+      try {
+        const appUrl  = '/api/now/table/sys_scope/' + encodeURIComponent(applicationRef) + '?sysparm_display_value=false&amp;sysparm_exclude_reference_link=true&amp;sysparm_fields=name,scope';
+        const appData = await fetchJson(appUrl);
+        const appResult = appData.result || {};
+        applicationName  = appResult.name  || applicationName;
+        applicationScope = appResult.scope || applicationScope;
+      } catch (error) {
+        applicationName  = applicationName || 'Global';
+        applicationScope = 'Unknown';
+      }
+    }
+
+    return {
+      applicationId: applicationRef,
+      application:   applicationName,
+      scope:         applicationScope,
+      updateSetId:   updateSetId,
+      name:          result.name  || updateSetId,
+      state:         result.state || 'Unknown'
+    };
+  }
+
+  // Fetch all global-scope applications from sys_scope
+
+  // Fetch all update sets (every state) from sys_update_set
+  async function loadUpdateSets() {
+    const query  = encodeURIComponent('application=global^state=in progress^parent=NULL^base_update_set=NULL^ORDERBYname');
+    const fields = encodeURIComponent('sys_id,name,state');
+    const url = '/api/now/table/sys_update_set?sysparm_display_value=false&amp;sysparm_exclude_reference_link=true&amp;sysparm_query=' + query + '&amp;sysparm_fields=' + fields + '&amp;sysparm_limit=10000';
+    const data = await fetchJson(url);
+    const records = Array.isArray(data.result) ? data.result : [];
+    return records
+      .map(function(record) {
+        return {
+          sysId: String(record.sys_id || '').trim(),
+          name:  String(record.name   || '').trim() || 'Unnamed Update Set',
+          state: String(record.state  || '').trim() || 'Unknown'
+        };
+      })
+      .filter(function(record) { return record.sysId; })
+      .sort(function(a, b) { return a.name.localeCompare(b.name); });
+  }
+
+  // Fetch sys_update_xml records for a given update set. Records with
+  // action=DELETE represent artifacts removed from the instance, so they are
+  // excluded; a type whose updates are all deletions gets no folder at all.
+  async function loadArtifacts(updateSetId) {
+    const query  = encodeURIComponent('update_set=' + updateSetId + '^action!=DELETE^ORDERBYtype^ORDERBYtarget_name');
+    const fields = encodeURIComponent('sys_id,type,target_name,name,action');
+    const url = '/api/now/table/sys_update_xml?sysparm_display_value=true&amp;sysparm_exclude_reference_link=true&amp;sysparm_limit=10000&amp;sysparm_query=' + query + '&amp;sysparm_fields=' + fields;
+    const data = await fetchJson(url);
+
+    return Array.isArray(data.result) ? data.result : [];
+  }
+
+  // ── Tree data model ─────────────────────────────────────────────────────────
+
+  // Determine a human-readable label for an artifact: prefer target_name, then
+  // strip the leading table prefix from the sys_update_xml name
+  function normalizeLabel(record) {
+    const target = String(record.target_name || '').trim();
+    if (target) return target;
+    const name = String(record.name || '').trim();
+    if (!name) return String(record.sys_id || 'Unnamed Artifact');
+    const segments = name.split('_');
+	
+    return segments.length &gt; 1 ? segments.slice(1).join('_') : name;
+  }
+
+  // Group raw artifact records into a folder-per-type tree structure
+  function buildTree(records) {
+    const byType = new Map();
+    records.forEach(function(rec) {
+      const typeName = String(rec.type || 'Unknown Type').trim() || 'Unknown Type';
+      if (!byType.has(typeName)) byType.set(typeName, []);
+      const parsed = parseTargetFromName(rec.name || '');
+      byType.get(typeName).push({
+        kind:          'file',
+        name:          normalizeLabel(rec),
+        tableName:     parsed.tableName,
+        targetSysId:   parsed.targetSysId,
+        updateXmlSysId: rec.sys_id || '',
+        action:        rec.action || ''
+      });
+    });
+
+    return Array.from(byType.entries())
+      .sort(function(a, b) { return a[0].localeCompare(b[0]); })
+      .map(function(entry) {
+        const typeName = entry[0];
+        const children = entry[1].sort(function(a, b) { return a.name.localeCompare(b.name); });
+        return {
+          kind:      'folder',
+          name:      typeName + ' (' + children.length + ')',
+          typeName:  typeName,
+          fileCount: children.length,
+          open:      false,
+          children:  children
+        };
+      });
+  }
+
+  // ── Main load orchestration ─────────────────────────────────────────────────
+  // Fetches all data in parallel and rebuilds the tree and meta bar.
+  // Called on initial load and whenever the user clicks Reload.
+  async function loadTree() {
+    try {
+      setNotice('');
+      isLoadingEmptyState = true;
+      if (!openTabs.length) renderTabs(); // Show spinner immediately
+
+      await loadCreateArtifactsConfig();
+      renderAddMenu();
+
+      const updateSetId = String(window.GUSS_CONTEXT.updateSetId || '').trim();
+      if (!updateSetId) {
+        metaEl.textContent = 'No current update set selected.';
+        currentUpdateSetId    = '';
+        currentUpdateSetName  = '';
+        currentUpdateSetState = '';
+        availableUpdateSets   = [];
+        treeData = [];
+        renderTree();
+        isLoadingEmptyState = false;
+        if (!openTabs.length) renderTabs();
+        setNotice('Unable to resolve current update set.');
+        return;
+      }
+
+      metaEl.textContent = 'Loading update set ' + updateSetId + '...';
+
+      // Kick off all three fetches in parallel
+      const loaded = await Promise.all([
+        loadUpdateSetInfo(updateSetId),
+        loadArtifacts(updateSetId),
+        loadUpdateSets()
+      ]);
+      const updateSetInfo = loaded[0];
+      const artifacts     = loaded[1];
+      const updateSets    = loaded[2];
+
+      availableUpdateSets = updateSets;
+
+      currentUpdateSetId    = updateSetInfo.updateSetId;
+      currentUpdateSetName  = updateSetInfo.name;
+      currentUpdateSetState = updateSetInfo.state;
+
+      // Snapshot context so "Make current set" can detect divergence
+      currentContextUpdateSetId = currentUpdateSetId;
+
+      treeData = buildTree(artifacts);
+      renderTree();
+
+      metaEl.textContent = updateSetInfo.name + ' \u2022 ' + artifacts.length + ' artifact(s)';
+      isLoadingEmptyState = false;
+      if (!openTabs.length) renderTabs();
+
+    } 
+	catch (error) {
+      currentUpdateSetId    = '';
+      currentUpdateSetName  = '';
+      currentUpdateSetState = '';
+      availableUpdateSets   = [];
+      treeData = [];
+      renderTree();
+      metaEl.textContent = 'Failed to load update set artifacts';
+      isLoadingEmptyState = false;
+      if (!openTabs.length) renderTabs();
+      setNotice('Failed to load artifacts. Check ACLs for sys_update_set and sys_update_xml.');
+    }
+  }
+
+  // ── Event listeners and startup ─────────────────────────────────────────────
+
+  function init() {
+    if (!appEl || !treeEl || !metaEl || !noticeEl || !tabsEl || !viewerEl || !addBtn || !addMenuEl || !reloadBtn) return;
+
+    // Toggle the "Add New File" dropdown
+    addBtn.addEventListener('click', function(event) {
+      event.stopPropagation();
+      setAddMenuOpen(addMenuEl.style.display === 'none');
+    });
+
+    // Close the dropdown when clicking anywhere outside it
+    document.addEventListener('click', function(event) {
+      if (addMenuEl &amp;&amp; !addMenuEl.contains(event.target) &amp;&amp; event.target !== addBtn) {
+        setAddMenuOpen(false);
+      }
+    });
+
+    if (reloadBtn) reloadBtn.addEventListener('click', loadTree);
+    initSidebarResizer();
+    setSidebarWidth(SIDEBAR_DEFAULT_WIDTH);
+    renderTabs();
+    loadTree();
+
+    // Handle "Make Current Set" button click
+    document.addEventListener('click', function(event) {
+      if (event.target &amp;&amp; event.target.id === 'guss-empty-make-current') {
+        event.preventDefault();
+        makeCurrentSet();
+      }
+    });
+  }
+
+  // Make the selected update set the current set for this user
+  function makeCurrentSet() {
+    if (!currentUpdateSetId) {
+      alert('No update set selected');
+      return;
+    }
+
+    var sessionToken = window.GUSS_CONTEXT &amp;&amp; window.GUSS_CONTEXT.userToken;
+    if (!sessionToken) {
+      alert('Unable to load the ServiceNow session token.');
+      return;
+    }
+
+    var body = [
+      'sysparm_processor=UpdateSetAjax',
+      'sysparm_type=changeUpdateSet',
+      'sysparm_value=' + encodeURIComponent(currentUpdateSetId),
+      'sysparm_ck=' + encodeURIComponent(sessionToken)
+    ].join('&amp;');
+
+    fetch('/xmlhttp.do', {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        'X-UserToken': sessionToken
+      },
+      body: body
+    })
+      .then(function(response) {
+        if (!response.ok) {
+          throw new Error('HTTP ' + response.status);
+        }
+        return response.text();
+      })
+      .then(function() {
+        var nav = (window.parent &amp;&amp; window.parent.g_navigation) || (window.top &amp;&amp; window.top.g_navigation) || window.g_navigation;
+        if (nav &amp;&amp; typeof nav.reloadWindow === 'function') {
+          nav.reloadWindow();
+        } else {
+          window.location.reload();
+        }
+      })
+      .catch(function(error) {
+        alert('Failed to set current update set: ' + error.message);
+      });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } 
+  else {
+    init();
+  }
+})();
+
+// ── "Open Artifact" modal ───────────────────────────────────────────────────
+(function () {
+  function byId(id) { return document.getElementById(id); }
+
+  // Records are cached per table for the lifetime of the page, so re-selecting
+  // an artifact type never refetches. Only global-scope records are pulled.
+  var recordCache = {};
+
+  var activeTableName = '';   // table currently selected in the modal
+  var activeRecords   = [];   // records backing the typeahead for that table
+  var selectedRecord  = null; // record chosen from the suggestions list
+
+  var MAX_SUGGESTIONS = 50;
+  var FETCH_LIMIT = 1000;
+
+  function parsePropertyValue(raw) {
+    if (!raw) return [];
+
+    var parsed = raw;
+    if (typeof raw === 'string') {
+      try {
+        parsed = JSON.parse(raw);
+      }
+	  catch (e) {
+        return [];
+      }
+    }
+
+    if (!Array.isArray(parsed)) {
+      return [];
+    }
+
+    var entries = [];
+    for (var i = 0; i &lt; parsed.length; i++) {
+      var item = parsed[i];
+      if (!item || typeof item !== 'object') continue;
+
+      var label = typeof item.label === 'string' ? item.label.trim() : '';
+      var tableName = typeof item.tableName === 'string' ? item.tableName.trim() : '';
+      if (!label || !tableName) continue;
+
+      var duplicate = false;
+      for (var j = 0; j &lt; entries.length; j++) {
+        if (entries[j].label === label &amp;&amp; entries[j].tableName === tableName) {
+          duplicate = true;
+          break;
+        }
+      }
+      if (!duplicate) {
+        entries.push({ label: label, tableName: tableName });
+      }
+    }
+    return entries;
+  }
+
+  function setHelp(message) {
+    var help = byId('guss-open-modal-help');
+    if (help) help.textContent = message || '';
+  }
+
+  function setRecordGroupVisible(visible) {
+    var group = byId('guss-open-record-group');
+    if (!group) return;
+    group.style.display = visible ? 'block' : 'none';
+  }
+
+  function setOpenSubmitVisible(visible) {
+    var button = byId('guss-open-modal-submit');
+    if (!button) return;
+    button.style.display = visible ? 'inline-block' : 'none';
+  }
+
+  function hideSuggestions() {
+    var suggestions = byId('guss-open-record-suggestions');
+    if (!suggestions) return;
+    suggestions.innerHTML = '';
+    suggestions.style.display = 'none';
+  }
+
+  // Clear the typeahead input, suggestions, and any prior selection
+  function resetRecordInput(placeholder, visible) {
+    selectedRecord = null;
+    setOpenSubmitVisible(false);
+    var input = byId('guss-open-record-input');
+    if (input) {
+      input.value = '';
+      input.placeholder = placeholder || 'Type to search records...';
+      input.disabled = false;
+    }
+    hideSuggestions();
+    setRecordGroupVisible(visible === true);
+  }
+
+  function fillSelect(entries) {
+    var select = byId('guss-open-modal-select');
+    if (!select) return;
+    select.innerHTML = '';
+
+    if (!entries.length) {
+      var emptyOption = document.createElement('option');
+      emptyOption.value = '';
+      emptyOption.textContent = 'No artifacts found in property';
+      select.appendChild(emptyOption);
+      resetRecordInput('No records available', false);
+      setHelp('Property parsed, but no valid label/tableName pairs were found.');
+      return;
+    }
+
+    var first = document.createElement('option');
+    first.value = '';
+    first.textContent = 'Select an artifact type';
+    select.appendChild(first);
+
+    for (var i = 0; i &lt; entries.length; i++) {
+      var option = document.createElement('option');
+      option.value = entries[i].tableName;
+      option.textContent = entries[i].label;
+      select.appendChild(option);
+    }
+    resetRecordInput('Select an artifact type first', false);
+    setHelp('Loaded ' + entries.length + ' artifact type' + (entries.length === 1 ? '' : 's') + '.');
+  }
+
+  function getSessionToken() {
+    var ctx = window.GUSS_CONTEXT || {};
+    return ctx.userToken || window.g_ck || '';
+  }
+
+  // Render the suggestion list for the current query against activeRecords
+  function renderSuggestions(query) {
+    var suggestions = byId('guss-open-record-suggestions');
+    if (!suggestions) return;
+
+    var trimmed = String(query || '').trim().toLowerCase();
+    suggestions.innerHTML = '';
+
+    if (!trimmed) {
+      suggestions.style.display = 'none';
+      return;
+    }
+
+    var matches = [];
+    for (var i = 0; i &lt; activeRecords.length &amp;&amp; matches.length &lt; MAX_SUGGESTIONS; i++) {
+      if (activeRecords[i].display_value.toLowerCase().indexOf(trimmed) !== -1) {
+        matches.push(activeRecords[i]);
+      }
+    }
+
+    if (!matches.length) {
+      suggestions.style.display = 'none';
+      return;
+    }
+
+    matches.forEach(function(record) {
+      var item = document.createElement('div');
+      item.className = 'guss-open-suggestion';
+      item.setAttribute('role', 'option');
+      item.textContent = record.display_value;
+      item.addEventListener('click', function() {
+        selectedRecord = record;
+        var input = byId('guss-open-record-input');
+        if (input) input.value = record.display_value;
+        hideSuggestions();
+        setOpenSubmitVisible(true);
+      });
+      suggestions.appendChild(item);
+    });
+    suggestions.style.display = 'block';
+  }
+
+  // Point the typeahead at a record list (fresh or cached) for a table
+  function applyRecords(tableName, records) {
+    activeRecords = records;
+    resetRecordInput('Type to search ' + records.length + ' record' + (records.length === 1 ? '' : 's') + '...', true);
+    setHelp('Loaded ' + records.length + ' global record' + (records.length === 1 ? '' : 's') + ' from ' + tableName + '.');
+
+    if (!records.length) {
+      var input = byId('guss-open-record-input');
+      if (input) {
+        input.placeholder = 'No global records found';
+        input.disabled = true;
+      }
+    }
+  }
+
+  function loadRecordsForTable(tableName) {
+    activeTableName = tableName;
+    activeRecords = [];
+
+    if (!tableName) {
+      resetRecordInput('Select an artifact type first', false);
+      return;
+    }
+
+    if (recordCache[tableName]) {
+      applyRecords(tableName, recordCache[tableName]);
+      return;
+    }
+
+    resetRecordInput('Loading records...', true);
+    var input = byId('guss-open-record-input');
+    if (input) input.disabled = true;
+    setHelp('');
+
+    var token = getSessionToken();
+    var query = encodeURIComponent('sys_scope=global');
+    var fields = encodeURIComponent('sys_id,name,sys_name,number,title');
+    var url = '/api/now/table/' + encodeURIComponent(tableName) + '?sysparm_limit=' + FETCH_LIMIT + '&amp;sysparm_query=' + query + '&amp;sysparm_fields=' + fields + '&amp;sysparm_exclude_reference_link=true';
+
+    fetch(url, {
+      method: 'GET',
+      credentials: 'same-origin',
+      headers: {
+        'Accept': 'application/json',
+        'X-UserToken': token,
+        'X-Requested-With': 'XMLHttpRequest'
+      }
+    })
+      .then(function(response) {
+        if (!response.ok) {
+          throw new Error('Record query failed with status ' + response.status);
+        }
+        return response.json();
+      })
+      .then(function(payload) {
+        var rows = Array.isArray(payload.result) ? payload.result : [];
+        var records = [];
+        for (var i = 0; i &lt; rows.length; i++) {
+          var row = rows[i] || {};
+          if (!row.sys_id) continue;
+          records.push({
+            sys_id: row.sys_id,
+            display_value: String(row.name || row.sys_name || row.number || row.title || row.sys_id)
+          });
+        }
+        records.sort(function(a, b) { return a.display_value.localeCompare(b.display_value); });
+        recordCache[tableName] = records;
+
+        // A stale response for a table the user has already navigated away
+        // from still warms the cache, but must not clobber the current view
+        if (activeTableName !== tableName) return;
+        applyRecords(tableName, records);
+      })
+      .catch(function(error) {
+        if (activeTableName !== tableName) return;
+        resetRecordInput('Unable to load records', true);
+        var failedInput = byId('guss-open-record-input');
+        if (failedInput) failedInput.disabled = true;
+        setHelp(String(error &amp;&amp; error.message ? error.message : error));
+      });
+  }
+
+  function bindArtifactTypeSelect() {
+    var select = byId('guss-open-modal-select');
+    if (!select || select.getAttribute('data-bound') === 'true') return;
+    select.setAttribute('data-bound', 'true');
+    select.addEventListener('change', function() {
+      loadRecordsForTable(this.value);
+    });
+  }
+
+  function bindRecordInput() {
+    var input = byId('guss-open-record-input');
+    if (!input || input.getAttribute('data-bound') === 'true') return;
+    input.setAttribute('data-bound', 'true');
+
+    input.addEventListener('input', function() {
+      // Editing invalidates any prior pick until a suggestion is clicked
+      selectedRecord = null;
+      setOpenSubmitVisible(false);
+      renderSuggestions(this.value);
+    });
+
+    input.addEventListener('focus', function() {
+      if (!selectedRecord) renderSuggestions(this.value);
+    });
+  }
+
+  function openSelectedRecord() {
+    var artifactTypeSelect = byId('guss-open-modal-select');
+    var opener = window.GUSS_OPEN_RECORD_TAB;
+    if (!artifactTypeSelect || !selectedRecord || typeof opener !== 'function') {
+      return;
+    }
+
+    opener({
+      tableName: artifactTypeSelect.value,
+      targetSysId: selectedRecord.sys_id,
+      name: selectedRecord.display_value
+    });
+    hideModal();
+  }
+
+  function loadLabels() {
+    var select = byId('guss-open-modal-select');
+    if (!select) return;
+    select.innerHTML = '&lt;option value=""&gt;Loading labels...&lt;/option&gt;';
+    activeTableName = '';
+    activeRecords = [];
+    resetRecordInput('Select an artifact type first', false);
+    setHelp('');
+
+    var ctx = window.GUSS_CONTEXT || {};
+    var entries = parsePropertyValue(ctx.createArtifactsJson || ctx.createArtifacts || ctx.create_artifacts || []);
+
+    if (!entries.length) {
+      select.innerHTML = '&lt;option value=""&gt;No artifacts available&lt;/option&gt;';
+      resetRecordInput('No records available', false);
+      setHelp('The create_artifacts property was not available or did not parse into valid artifact entries.');
+      return;
+    }
+
+    fillSelect(entries);
+    bindArtifactTypeSelect();
+    bindRecordInput();
+  }
+
+  function showModal() {
+    var overlay = byId('guss-open-modal-overlay');
+    if (!overlay) return;
+    overlay.style.display = 'flex';
+    loadLabels();
+  }
+
+  function hideModal() {
+    var overlay = byId('guss-open-modal-overlay');
+    if (!overlay) return;
+    overlay.style.display = 'none';
+    hideSuggestions();
+  }
+
+  function bindOpenButton() {
+    var button = byId('guss-open-btn');
+    if (!button || button.getAttribute('data-open-modal-bound') === 'true') return;
+    button.setAttribute('data-open-modal-bound', 'true');
+    button.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      showModal();
+    });
+  }
+
+  function bindModalEvents() {
+    var closeButton = byId('guss-open-modal-close');
+    var cancelButton = byId('guss-open-modal-cancel');
+    var submitButton = byId('guss-open-modal-submit');
+    var overlay = byId('guss-open-modal-overlay');
+
+    if (closeButton &amp;&amp; closeButton.getAttribute('data-close-bound') !== 'true') {
+      closeButton.setAttribute('data-close-bound', 'true');
+      closeButton.addEventListener('click', hideModal);
+    }
+
+    if (cancelButton &amp;&amp; cancelButton.getAttribute('data-cancel-bound') !== 'true') {
+      cancelButton.setAttribute('data-cancel-bound', 'true');
+      cancelButton.addEventListener('click', hideModal);
+    }
+
+    if (submitButton &amp;&amp; submitButton.getAttribute('data-submit-bound') !== 'true') {
+      submitButton.setAttribute('data-submit-bound', 'true');
+      submitButton.addEventListener('click', openSelectedRecord);
+    }
+
+    if (overlay &amp;&amp; overlay.getAttribute('data-overlay-bound') !== 'true') {
+      overlay.setAttribute('data-overlay-bound', 'true');
+      overlay.addEventListener('click', function (evt) {
+        if (evt.target === overlay) hideModal();
+      });
+    }
+
+    if (document.body &amp;&amp; document.body.getAttribute('data-open-modal-esc-bound') !== 'true') {
+      document.body.setAttribute('data-open-modal-esc-bound', 'true');
+      document.addEventListener('keydown', function (evt) {
+        if (evt.key === 'Escape') hideModal();
+      });
+    }
+
+    // Clicking anywhere outside the typeahead dismisses its suggestion list
+    if (document.body &amp;&amp; document.body.getAttribute('data-open-suggest-bound') !== 'true') {
+      document.body.setAttribute('data-open-suggest-bound', 'true');
+      document.addEventListener('click', function (evt) {
+        var input = byId('guss-open-record-input');
+        var suggestions = byId('guss-open-record-suggestions');
+        if (!suggestions) return;
+        if (evt.target === input || suggestions.contains(evt.target)) return;
+        suggestions.style.display = 'none';
+      });
+    }
+  }
+
+  function init() {
+    bindOpenButton();
+    bindModalEvents();
+    bindRecordInput();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  }
+  else {
+    init();
+  }
+
+  var observer = new MutationObserver(init);
+  observer.observe(document.documentElement || document.body, { childList: true, subtree: true });
+})();
+]]&gt;&lt;/client_script&gt;&lt;description&gt;Landing page for Global Update Set Studio.&lt;/description&gt;&lt;direct&gt;true&lt;/direct&gt;&lt;endpoint/&gt;&lt;html&gt;&lt;![CDATA[&lt;j:jelly xmlns:j="jelly:core" xmlns:g="glide"&gt;
+&lt;g:requires name="scripts/classes/ajax/GlideAjax.js"&gt;&lt;/g:requires&gt;
+&lt;g:requires name="scripts/classes/ajax/GlideURL.js"&gt;&lt;/g:requires&gt;
+
+&lt;style&gt;
+:root {
+  --bg: #111827;
+  --panel: #1f2937;
+  --panel-2: #0f172a;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --border: #374151a;
+  --hover: #243244;
+  --selected: #1e3a5f;
+  --warning-bg: #3f2a12;
+  --warning-border: #7c4a13;
+  --warning-text: #fcd9a3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Inter, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.guss-app {
+  display: grid;
+  grid-template-columns: var(--guss-sidebar-width, 330px) 6px 1fr;
+  height: 100vh;
+}
+
+.guss-sidebar {
+  border-right: 1px solid var(--border);
+  background: var(--panel-2);
+  overflow: auto;
+  position: relative;
+}
+
+.guss-resizer {
+  background: #1f2937;
+  border-right: 1px solid var(--border);
+  cursor: ew-resize;
+  position: relative;
+}
+
+.guss-resizer:hover {
+  background: #334155;
+}
+
+.guss-resizer::after {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  width: 2px;
+  height: 48px;
+  transform: translateY(-50%);
+  background: rgba(148, 163, 184, 0.75);
+  border-radius: 1px;
+}
+
+.guss-sidebar-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 12px 8px;
+  position: sticky;
+  top: 0;
+  background: var(--panel-2);
+  z-index: 5;
+}
+
+.guss-add-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.guss-add-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.guss-add-menu {
+  position: absolute;
+  top: 62px;
+  right: 12px;
+  width: 290px;
+  background: #ffffff;
+  color: #334155;
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.28);
+  border: 1px solid #d9e2ec;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.guss-add-menu-title {
+  padding: 12px 16px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #94a3b8;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.guss-add-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  border: 0;
+  background: #ffffff;
+  color: #334155;
+  padding: 8px 16px;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.guss-add-menu-item:hover {
+  background: #f8fafc;
+}
+
+.guss-add-menu-icon {
+  width: 20px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.guss-main {
+  display: grid;
+  grid-template-rows: 48px 1fr;
+  min-width: 0;
+  min-height: 0;
+}
+
+.guss-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel);
+}
+
+.guss-title {
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.guss-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.guss-meta {
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.guss-btn {
+  border: 1px solid var(--border);
+  background: #0b1220;
+  color: var(--text);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.guss-btn:hover {
+  background: #172033;
+}
+
+.guss-workspace {
+  display: grid;
+  grid-template-rows: 1fr;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.guss-tabs {
+  display: flex;
+  /* align-items: flex-end; */
+  gap: 2px;
+  padding: 0;
+  border-bottom: 1px solid #bcc7d5;
+  background: #dde4ec;
+  overflow-x: auto;
+}
+
+.guss-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 0;
+  padding: 16px 14px 13px;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  background: #d5dde7;
+  color: #5b6f87;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 1;
+  position: relative;
+  top: -1px;
+}
+
+.guss-tab.active {
+  background: #ffffff;
+  color: #0f4f79;
+  border-color: #b8c5d4;
+  box-shadow: inset 0 3px 0 #1ea6ff;
+}
+
+.guss-tab-label {
+  max-width: 230px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.guss-tab-close {
+  color: #8a99ac;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 12px;
+  margin-left: 2px;
+}
+
+.guss-viewer {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.guss-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+}
+
+.guss-empty {
+  height: 100%;
+  padding: 16px;
+  overflow: auto;
+}
+
+.guss-empty-intro {
+  text-align: center;
+}
+
+.guss-empty-title {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1;
+  color: #e5e7eb;
+  letter-spacing: 1px;
+}
+
+.guss-empty-subtitle {
+  margin-top: 12px;
+  font-size: 20px;
+  color: #9ca3af;
+}
+
+.guss-empty-divider {
+  width: 220px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.55),
+    transparent
+  );
+  margin: 16px auto 0;
+}
+
+.guss-empty-meta {
+  margin: 16px auto 0;
+  display: grid;
+  grid-template-columns: 150px minmax(280px, 1fr);
+  gap: 12px 16px;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 920px);
+  max-width: 920px;
+}
+
+.guss-empty-label {
+  font-size: 18px;
+  color: #cbd5e1;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.guss-empty-value {
+  font-size: 18px;
+  color: #cbd5e1;
+  text-align: left;
+}
+
+.guss-empty-note {
+  display: block;
+  width: min(100%, 600px);
+  margin: 20px auto 0;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(20, 184, 166, 0.45);
+  background: rgba(13, 148, 136, 0.18);
+  color: #99f6e4;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.guss-empty-select {
+  width: 100%;
+  padding: 9px 14px;
+  border-radius: 4px;
+  border: 1px solid #94a3b8;
+  background: linear-gradient(180deg, #ffffff 0%, #eef3f8 100%);
+  color: #0f172a;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow:
+    0 8px 20px rgba(15, 23, 42, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.guss-empty-select:focus {
+  outline: none;
+  border-color: #60a5fa;
+  box-shadow:
+    0 0 0 3px rgba(59, 130, 246, 0.25),
+    0 8px 20px rgba(15, 23, 42, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.guss-empty-select:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.guss-empty-action-cell {
+  width: min(100%, 920px);
+  max-width: 920px;
+  margin: 12px auto 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.guss-empty-action {
+  padding: 8px 12px;
+  border: 1px solid #60a5fa;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #dbeafe 0%, #bfdbfe 100%);
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.12);
+}
+
+.guss-empty-action:hover {
+  background: linear-gradient(180deg, #bfdbfe 0%, #93c5fd 100%);
+}
+
+.guss-loading-wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guss-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  color: #cbd5e1;
+}
+
+.guss-spinner {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 4px solid rgba(148, 163, 184, 0.28);
+  border-top-color: #93c5fd;
+  animation: guss-spin 0.9s linear infinite;
+}
+
+.guss-loading-text {
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  color: #94a3b8;
+}
+
+@keyframes guss-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.guss-panel {
+  background: #0b1220;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.guss-muted {
+  color: var(--muted);
+}
+
+.guss-notice {
+  margin: 8px 12px 0;
+  border: 1px solid var(--warning-border);
+  background: var(--warning-bg);
+  color: var(--warning-text);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 12px;
+  display: none;
+}
+
+.guss-section-title {
+  padding: 12px 12px 8px;
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.guss-tree {
+  list-style: none;
+  margin: 0;
+  padding: 0 8px 16px;
+}
+
+.guss-node {
+  margin: 1px 0;
+}
+
+.guss-node-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.guss-node-row:hover {
+  background: var(--hover);
+}
+
+.guss-node-row.guss-selected {
+  background: var(--selected);
+}
+
+.guss-caret {
+  width: 10px;
+  color: var(--muted);
+  flex: 0 0 10px;
+  text-align: center;
+}
+
+.guss-name {
+  flex: 1;
+  font-size: 12px;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.guss-children {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 22px;
+}
+
+.guss-file-icon {
+  color: #93c5fd;
+}
+
+.guss-folder-icon {
+  color: #fbbf24;
+}
+
+#guss-open-btn.guss-open-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -6px;
+  width: 34px;
+  min-width: 34px;
+  padding: 0;
+  box-sizing: border-box;
+  height: 34px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: #1b1b1b;
+  color: #ffffff;
+  line-height: 1;
+  cursor: pointer;
+}
+
+#guss-open-btn.guss-open-btn:hover {
+  background: #242424;
+}
+
+#guss-open-btn .guss-open-icon {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1;
+}
+
+#guss-add-btn.guss-new-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  margin-right: 30px;
+  transform: translateX(16px);
+  width: 34px;
+  min-width: 34px;
+  padding: 0;
+  box-sizing: border-box;
+  height: 34px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: #1b1b1b;
+  color: #ffffff;
+  line-height: 1;
+  cursor: pointer;
+}
+
+#guss-add-btn.guss-new-btn:hover {
+  background: #242424;
+}
+
+#guss-add-btn .guss-new-icon {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+#guss-open-modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 9999;
+}
+
+#guss-open-modal {
+  width: 460px;
+  max-width: calc(100vw - 32px);
+  background: #131922;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  padding: 16px;
+}
+
+#guss-open-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+#guss-open-modal-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#guss-open-modal-close {
+  border: 0;
+  background: transparent;
+  color: #d6dde8;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+#guss-open-modal-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #cbd5e1;
+}
+
+#guss-open-modal-select,
+#guss-open-record-input {
+  width: 100%;
+  height: 34px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #0f1722;
+  color: #ffffff;
+  padding: 0 8px;
+  font-size: 12px;
+}
+
+#guss-open-record-input:disabled {
+  opacity: 0.6;
+}
+
+#guss-open-record-wrap {
+  position: relative;
+}
+
+#guss-open-record-suggestions {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  margin-top: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 4px;
+  background: #0f1722;
+  z-index: 10000;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+}
+
+.guss-open-suggestion {
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.guss-open-suggestion:hover {
+  background: #1e3a5f;
+}
+
+#guss-open-record-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  color: #cbd5e1;
+}
+
+#guss-open-modal-help {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #9fb0c6;
+  min-height: 14px;
+}
+
+#guss-open-modal-actions {
+  margin-top: 14px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.guss-open-modal-btn {
+  height: 30px;
+  padding: 0 12px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: #1b1b1b;
+  color: #ffffff;
+  font-size: 12px;
+  cursor: pointer;
+}
+&lt;/style&gt;
+
+&lt;!-- Server-provided context, handed off to Client Script as inert JSON data.
+     No executable JavaScript lives in this HTML field anymore — this is a
+     data island only. Client Script reads and parses it on load.
+     JSON.stringify() (Rhino's built-in) does the escaping here rather than
+     a hand-rolled .replace() chain, since the create_artifacts property
+     value is itself JSON text full of quotes that must round-trip safely. --&gt;
+&lt;script id="guss-context-data" type="application/json"&gt;
+{
+  "updateSetId": $[JSON.stringify(gs.getPreference('sys_update_set'))],
+  "userToken": $[JSON.stringify(gs.getSessionToken())],
+  "createArtifactsJson": $[JSON.stringify(gs.getProperty('global_update_set_studio.create_artifacts'))]
+}
+&lt;/script&gt;
+
+&lt;div id="guss-open-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="guss-open-modal-title"&gt;
+  &lt;div id="guss-open-modal"&gt;
+    &lt;div id="guss-open-modal-header"&gt;
+      &lt;div id="guss-open-modal-title"&gt;Open Artifact&lt;/div&gt;
+      &lt;button id="guss-open-modal-close" type="button" aria-label="Close"&gt;×&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;label id="guss-open-modal-label" for="guss-open-modal-select"&gt;Artifact type&lt;/label&gt;
+    &lt;select id="guss-open-modal-select"&gt;
+      &lt;option value=""&gt;Loading labels...&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;div id="guss-open-record-group" style="display:none;"&gt;
+      &lt;label id="guss-open-record-label" for="guss-open-record-input"&gt;Record&lt;/label&gt;
+      &lt;div id="guss-open-record-wrap"&gt;
+        &lt;input type="text" id="guss-open-record-input" autocomplete="off" placeholder="Type to search records..." /&gt;
+        &lt;div id="guss-open-record-suggestions" role="listbox"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="guss-open-modal-help"&gt;&lt;/div&gt;
+    &lt;div id="guss-open-modal-actions"&gt;
+      &lt;button id="guss-open-modal-submit" class="guss-open-modal-btn" type="button" style="display:none;"&gt;Open&lt;/button&gt;
+      &lt;button id="guss-open-modal-cancel" class="guss-open-modal-btn" type="button"&gt;Close&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="guss-app" class="guss-app"&gt;
+  &lt;aside class="guss-sidebar"&gt;
+    &lt;div class="guss-sidebar-head"&gt;
+      &lt;div class="guss-section-title"&gt;Update Set Files&lt;/div&gt;
+
+		&lt;div&gt;
+			&lt;button id="guss-add-btn" class="guss-add-btn guss-new-btn" type="button" aria-label="Add new artifact"&gt;&lt;span class="guss-new-icon"&gt;+&lt;/span&gt;&lt;/button&gt;
+			&lt;button id="guss-open-btn" class="guss-open-btn" type="button" aria-label="Open update set"&gt;&lt;span class="guss-open-icon"&gt;]]&gt;📂&lt;![CDATA[&lt;/span&gt;&lt;/button&gt;
+		&lt;/div&gt;
+
+
+      &lt;div id="guss-add-menu" class="guss-add-menu" style="display:none;"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="guss-notice" class="guss-notice"&gt;&lt;/div&gt;
+    &lt;ul id="guss-tree" class="guss-tree"&gt;&lt;/ul&gt;
+  &lt;/aside&gt;
+  &lt;div id="guss-sidebar-resizer" class="guss-resizer" role="separator" aria-orientation="vertical" aria-label="Resize sidebar"&gt;&lt;/div&gt;
+
+  &lt;main class="guss-main"&gt;
+    &lt;div class="guss-topbar"&gt;
+      &lt;div class="guss-title"&gt;&lt;!-- This space intentionally left blank --&gt;&lt;/div&gt;
+      &lt;div class="guss-topbar-actions"&gt;
+        &lt;span id="guss-meta" class="guss-meta"&gt;Loading current update set...&lt;/span&gt;
+        &lt;button id="guss-reload" class="guss-btn" type="button"&gt;Reload&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;section class="guss-workspace"&gt;
+      &lt;div id="guss-tabs" class="guss-tabs"&gt;&lt;/div&gt;
+      &lt;div id="guss-viewer" class="guss-viewer"&gt;&lt;/div&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+&lt;/div&gt;
+
+&lt;/j:jelly&gt;]]&gt;&lt;/html&gt;&lt;name&gt;GUSS&lt;/name&gt;&lt;processing_script/&gt;&lt;sys_class_name&gt;sys_ui_page&lt;/sys_class_name&gt;&lt;sys_created_by&gt;svc.spie.mcpserver&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-08-07 23:50:39&lt;/sys_created_on&gt;&lt;sys_id&gt;6ec0bbb583a2cf9066b576d6feaad3be&lt;/sys_id&gt;&lt;sys_mod_count&gt;135&lt;/sys_mod_count&gt;&lt;sys_name&gt;GUSS&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_page_6ec0bbb583a2cf9066b576d6feaad3be&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-08-29 12:54:47&lt;/sys_updated_on&gt;&lt;/sys_ui_page&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;6ec0bbb583a2cf9066b576d6feaad3be&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-08-09 18:01:20&lt;/sys_created_on&gt;&lt;sys_id&gt;0d04bc6a83a287d066b576d6feaad302&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-08-09 18:01:20&lt;/sys_updated_on&gt;&lt;table&gt;sys_ui_page&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-936386174</payload_hash>
+<remote_update_set display_value="GlobalUpdateStudio-v2.1">5d18befc834fc75066b576d6feaad3a8</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-29 13:40:22</sys_created_on>
+<sys_id>9918b630838fc75066b576d6feaad372</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>1a04d963eee0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-29 13:40:22</sys_updated_on>
+<table/>
+<target_name>GUSS</target_name>
+<type>UI Page</type>
+<update_domain>global</update_domain>
+<update_guid>21adae7c02cbc75028e61623413f8417</update_guid>
+<update_guid_history>21adae7c02cbc75028e61623413f8417:-936386174,f56dea7cb0cbc75018434cad96a276d3:-531814214,f6cc2ef8f6cbc750ea9467e44bc6df1c:977590454,0eab62383bcbc7509d3b846b04a5cad4:-1802412199,3b7b6af455cbc750df1f3b427a07ce02:-463265445,b5cb28b8b3438750c809ddffb056af5d:-1802412199,f61b6038b7438750e475377deffe30df:-562334491,d61a2834c04387501d8e21a4449e8017:-1827332804,eed964342343875047443fe811874d1a:-1470154519,e1a9a8f0e343875071b84d32d99e9f4a:-1919226361,0429ec701d4387505278374c7ea7a39c:-1467828010,756824f8a0cf47500872e5412631e052:-1814621945,0ae624349003875020e8b51d2f4a9fc3:-1699972373,7cb4acf0d4038750ac0816dd11465bf6:-1355187324,5c4428b0e4038750d61aaec9e889b402:1113578601,b8bb88f083cb4750b084b3f6f217876a:499164947,b07b84f02bcb4750bdc3e50ab0500c0d:173693981,ba97c074568b47505f84975124517610:1113578601,253784f05a8b47507b3d38d5b713fba2:1575989485,92c432231d7ac710f318e17a93b81a75:967851497,3f3ef19f3bfac31077facbe169c62851:-1640504450,e579611f42f6c310d29bcafb56fd3905:1398932889,a729e59be2f6c3105c11dc9dad857d01:537961678,5283d99799f2c3102391881dcc392a67:-888203311,72c5c5dbf432c3103e3de5979660b890:1705641894,61e4c91bf932c3103e23d8dde19cb21e:-929556700,9b9481d72932c310e7b529383e81606b:651422318,a35401d73c32c3104c958c16b1d77c27:2096493011,851441972432c3103e997c1ecd95db36:-457666345,dfd334d3687e83104975e4866bdb8847:1993475968,d5b34acfa47a03105808daf63103663a:-1339196101,d3c532a6a8b6c710d8391c5556b22256:397228824,06957662f8b6c71052835acac5bf223d:-2072526120,1d15fae226b6c7103bd9cb5c162a8abc:992558109,eda436a2cdb6c71084ea6c95dd49ecc4:-940188994,18547262e2b6c71081ccc1b71ffe740f:1311563393,469372ae3476c710143550778c0a45ef:1123954133,bcece426b4fa4710167beda164c81c9e:1815755719,f0bcace2cafa471015e9da8471764b65:-206597533,7df8ace63cba4710162ad16b1f339882:1815755719,5cd5ac6ee67a47107271e49ad14125f5:-503099204,4425e8ea567a47107a76f6c94c47c09b:1013665816,6172a0e2007a47107a48c16ae6f596c1:-503099204,e2b02c6eae3a4710d9068a8f4f9467fb:1798659627,278fb75676b247102625439a03249c7e:916253408,f90e7b1238b24710294a35f12f641286:-1099311147,d371a15626f2c310d69b679de61154e9:1855618800,a3cf59de5fb2c310afe5bc9ea98480cd:102242312,d64f159e61b2c31057c226a2b61fb230:1572085221,6e9e511e9fb2c310556542509dbf3c2b:224546755,009d5d1a49b2c310e07475559bfc78d2:1577798235,69b9191e4072c310a36be7ee851fc337:-1863546299,5ded8382c1b643102d8e6ac7d59dcb45:-760218947,0cfc83ce3776431083ae599ee5bf5c34:2014714093,c63b874a9676431074245922bad7d785:-1738107447,10facb0a617643102d6d348d45561ff3:1674467139,9d2ac3866e7643102874cd22433c2988:505848664,ea990b064176431014977b77fdcc098e:-1898026078,542987826176431029389b0bb77d1ad4:504164183,542847ce02364310c50d3b1e87025c9d:1557669103,1aa7478ead36431094ac6866ff3536f5:-1478679760,1fe6030e89364310bd59c0834a521394:-1423856108,93d64fca693643104641871ad669978e:371977163,11c64bca08364310ebbfead45f16780f:-693182104,be66878a0e364310bea090b0c118aeaf:747098351,cb364f4a383643106f994e6a06547340:1786575816,1bb5c30a3f36431038e3af60986e90d2:747098351,12158f46313643108fb1aedec13787ac:408186140,86340e8a2df6031091be1614912012bf:1573416947,14334ac6d9f60310a4092765c6a31302:-915813383,2ca0868e96b603102b9a57c3a87ec982:1573416947,e200864e39b60310030bbe677f5dfc1d:-1195672219,b165dd72eb2e4bd06650788ccde10653:1573416947,c7a3593eccea4bd022825d441ed412e5:1219658256,8fe1d1f649ea4bd01cf7a078f32468a8:1070248796,d9b119b6f2ea4bd014550e33efe55bb3:-964538160,d5b0d5f2e3ea4bd07db48740d26f890f:1767569166,9d8b41f296aa4bd09bf2f47affa28695:-2047990904,d37a4dfe206a4bd007b7d5fac66c3fb4:246610996,c3c9c57ece6a4bd06c7c742218a033a5:-1272379379,cda881ba0b6a4bd04c4c031bd54dee10:-200113458,7ad60936e26a4bd0741dfaa43d17fcaf:1505135676,dea50d32e66a4bd0c87231a05560b786:-1882444612,36d48d7ed42a4bd05fcbee122204331f:-1807839231,29f3c1bad72a4bd01e58a348cdfc6fd1:1428224684,eb6d78362ae64bd059c60d0a71184fff:-735941766,2e58f8b605a64bd0b03efcf995e6e89e:-205912144,a52870b603a64bd02e25d41737f2ffae:-1309862574,d715d6e611a6c7d0fd4e11a2de764b6d:180284541,3a34d62698a6c7d049f076632aa80465:-947126942,0aa31ea203a6c7d0780d20b84225db68:-183720586,9281daea9166c7d045bae9f5b1e5753e:-64706721,d51e4eee2e26c7d038d95095b7d63e62:-1882483506,0687316ad422c7d07d9c1384ccb0b35b:-1366602151,b837fde64322c7d07963a984e9e9cc73:1504316143,90063de61eee87d075adbbcd161dba3d:-471995295,2715f5621f22c7d09520f82d0919be33:-1222761685,f2f4fd22c322c7d025b0e373d87633e0:1641909722,7684b5ee2fee87d09c2dcf00e01e2060:-1869082,c874356afcee87d0d48e72506a83115f:1093231203,772375ea90ee87d00040103b32eab0af:-1869082,8904bc6aa4a287d06fd42fdec0380c0a:-299314118,7ef138ee33a287d0360cab4acee700c4:1734277297,1c4a8c625fea47d01bdfa93642efad39:-1477957421,ed7cff96ef2a47d02cc84e859836bafc:2142190509,482cff56922a47d09db5861150622253:-2031602566,46ea7392de2a47d07d36363c36612e60:798022476,e0d1a156cfaac3d0c177b983a13742dd:1060064032,b4b12d162faac3d0ffcb4960060c6769:-622305713,0b1069deed6ac3d0704b8b9e27214c25:563754029,40df599e076ac3d01d0db96b8311eaf9:1352237821,b22f991e556ac3d0e5a1b85302a4af39:1375877134,3566cdde2e26c3d0e47ccfe1fdc6b220:282214186,da15cdda3926c3d0b9268adf94982d80:-987484893,54a14d128626c3d0281df1bdde258c72:-968840547,f490495e34e2c3d04d563b266b971279:950753051,dbee381a17e2c3d022c29b967ebc303d:56243253,447c7c12eae2c3d00703eb89b804b31e:-1167509960,ab7b7c5e53a2c3d06d446a29add1c5ed:-1960097481,d166bc5e8e62c3d0023c1421f3caa78c:-619918165,3960501accaa83d0fa86fa196f91d536:968047006,95ef0896a3aa83d0b30f85d64cae9949:-1102145133,861e8c1229aa83d099780ad798e91679:144896483,280e88124caa83d04de8295729b5972e:-456647381,52bf1b02746283d0d0db94e440072f58:1703288620,734e62c6d6e643d04065cd9a90382995:-102992183,18da8c0a66e6cf90c1f9a37d36f4f215:-560148710,0f3a40c699e6cf90b00d7a9628724595:-1593667995,09364c4a2ea6cf903dfcceb2a55d4d9b:-424260301,94618c8a3d66cf901074b8bb01fb8696:-1189039777,499ff375b766cf901a0370ff97c648a5:-627170980,175e3b711e66cf9070e90a5c1e50dd1f:-1388902121,a66a33759126cf9033f80e9301058a32:130657453,ef1a73352b26cf9007f7309bc2d6ebe6:1238144529,5c4773f983e2cf9084020215984b796b:-1165587432,68363b75a5e2cf90220586052507d3c2:2139898637,a2657775bfe2cf906571bf78199fb9ed:1875665831,c9543f7178e2cf90e1bc323e20c05566:817047707,22933bfd60a2cf90e00710f294b0ce74:-440976559,492373bde1a2cf90029f98179e6370d9:-1593702114,422273f92ca2cf901bcca3782bf66923:1527772110,e2c07fb53ca2cf90e960731c4943a98a:-580772417</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_app_module_0df2c26e83a2c7d066b576d6feaad34f</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module"><sys_app_module action="DELETE"><active>true</active><application display_value="GUSS">fcf2c26e83a2c7d066b576d6feaad314</application><assessment/><device_type/><filter/><hint/><homepage/><image/><link_type>DIRECT</link_type><map_page/><mobile_title>Styles</mobile_title><mobile_view_name>Mobile</mobile_view_name><name/><order>110</order><override_menu_roles>false</override_menu_roles><query>/nav_to.do?uri=content_css.do?sys_id=508f6ce683a287d066b576d6feaad381</query><report/><require_confirmation>true</require_confirmation><roles/><sys_class_name>sys_app_module</sys_class_name><sys_created_by>svc.spie.mcpserver</sys_created_by><sys_created_on>2026-08-09 23:46:14</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>0df2c26e83a2c7d066b576d6feaad34f</sys_id><sys_mod_count>2</sys_mod_count><sys_name>Styles</sys_name><sys_overrides/><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_app_module_0df2c26e83a2c7d066b576d6feaad34f</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-22 03:04:06</sys_updated_on><timeline_page/><title>Styles</title><uncancelable>false</uncancelable><view_name/><window_name/></sys_app_module></record_update>]]></payload>
+<payload_hash>-1713810217</payload_hash>
+<remote_update_set display_value="GlobalUpdateStudio-v2.1">5d18befc834fc75066b576d6feaad3a8</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-29 13:40:22</sys_created_on>
+<sys_id>d518befc834fc75066b576d6feaad3aa</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>1a0341a7dc90000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-29 13:40:22</sys_updated_on>
+<table/>
+<target_name>Styles</target_name>
+<type>Module</type>
+<update_domain>global</update_domain>
+<update_guid>a5bec9d757b2c310ee437786fc21a45b</update_guid>
+<update_guid_history>a5bec9d757b2c310ee437786fc21a45b:-1713810217,6c5328665d7a47108913a9a464b13c5b:1572798923,12954e6aaea2c7d08421a75d79280225:202442893,81f2c26e14a2c7d0cfb65c490d64d35f:1189048316</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_include_7b4b086683ea47d066b576d6feaad39f</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;public&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;global.GlobalUpdateSetStudioAJAX&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description&gt;Checks for customer update collisions and reads GUSS create-artifacts property values.&lt;/description&gt;&lt;mobile_callable&gt;false&lt;/mobile_callable&gt;&lt;name&gt;GlobalUpdateSetStudioAJAX&lt;/name&gt;&lt;sandbox_callable&gt;false&lt;/sandbox_callable&gt;&lt;script&gt;&lt;![CDATA[var GlobalUpdateSetStudioAJAX = Class.create();
+GlobalUpdateSetStudioAJAX.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+
+    // Returns the JSON array stored in the sys_properties record that drives the
+    // "Add New File" dropdown in GUSS.  The property name is:
+    //   global_update_set_studio.create_artifacts
+    getCreateArtifactsPropertyValue: function() {
+        return gs.getProperty('global_update_set_studio.create_artifacts', '[]');
+    },
+
+	// Set the current update set for the user (AJAX callable)
+	makeCurrentUpdateSet: function() {
+		var updateSetId = this.getParameter('sysparm_update_set_id');
+
+		if (!updateSetId) {
+			this.getDocument().setAttribute('status', 'error');
+			this.getDocument().setAttribute('message', 'Update set ID is required');
+			return;
+		}
+
+		try {
+			// Update the current user's sys_update_set field
+			var user = gs.getUser();
+			var userGR = new GlideRecord('sys_user');
+
+			if (userGR.get(user.getID())) {
+				userGR.setValue('sys_update_set', updateSetId);
+				userGR.update();
+				this.getDocument().setAttribute('status', 'success');
+				this.getDocument().setAttribute('message', 'Update set changed successfully');
+			} 
+			else {
+				this.getDocument().setAttribute('status', 'error');
+				this.getDocument().setAttribute('message', 'Unable to find current user');
+			}
+		} 
+		catch (error) {
+			this.getDocument().setAttribute('status', 'error');
+			this.getDocument().setAttribute('message', 'Error setting update set: ' + error.getMessage());
+		}
+	},
+
+    type: 'GlobalUpdateSetStudioAJAX'
+});]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-08-09 15:04:38&lt;/sys_created_on&gt;&lt;sys_id&gt;7b4b086683ea47d066b576d6feaad39f&lt;/sys_id&gt;&lt;sys_mod_count&gt;13&lt;/sys_mod_count&gt;&lt;sys_name&gt;GlobalUpdateSetStudioAJAX&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_7b4b086683ea47d066b576d6feaad39f&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-08-24 16:48:21&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;7b4b086683ea47d066b576d6feaad39f&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-08-09 15:04:38&lt;/sys_created_on&gt;&lt;sys_id&gt;649bcc6683ea47d066b576d6feaad364&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-08-09 15:04:38&lt;/sys_updated_on&gt;&lt;table&gt;sys_script_include&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+<payload_hash>1883352660</payload_hash>
+<remote_update_set display_value="GlobalUpdateStudio-v2.1">5d18befc834fc75066b576d6feaad3a8</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-29 13:40:22</sys_created_on>
+<sys_id>d918b630838fc75066b576d6feaad371</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>1a034ac49cf0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-29 13:40:22</sys_updated_on>
+<table/>
+<target_name>GlobalUpdateSetStudioAJAX</target_name>
+<type>Script Include</type>
+<update_domain>global</update_domain>
+<update_guid>9223715b4c7ac310752f731c8d45294e</update_guid>
+<update_guid_history>9223715b4c7ac310752f731c8d45294e:1883352660,a17d817ae8aa4bd0d96d8c82faa7f70c:452124986,adeb053645aa4bd04e53c5289c575023:-501700783,e60945fab86a4bd07c75ac333e2b62af:1116963551,c37db8b609e64bd0e79213756a5dd864:2074491492,5608707606a64bd009b723a81180e2ba:220643470,9644b0ba13664bd07f13219d4d34d316:1964033208,833430babc664bd0072ac2baeb5bec1e:693783416,8124f87a3a664bd0592491a113e28d2d:-358268510,981112aa5366c7d00b13e32e80508c1b:-582082171,bf105ea67d66c7d0f7d47bab2e25ab38:-504883982,ec4c402a92ea47d0349abec6de786d9a:-1282476016,871c402a60ea47d02f7c439bf2dfd76e:1101724136,f09b44a619ea47d0cd632bb2734d01cf:608650653</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
